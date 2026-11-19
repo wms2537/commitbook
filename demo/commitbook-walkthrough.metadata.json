@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-11-19T13:47:23.871583+00:00",
+  "mode": "local-preview",
+  "publicTestnetExecution": false,
+  "artifactType": "captioned walkthrough from captured application stills",
+  "screenRecording": false,
+  "audio": false,
+  "videoFile": "commitbook-walkthrough.mp4",
+  "videoSha256": "165e196dd803ed158ee4229b2d9fd2ba65bf4f77fcae6f75ae7a7b32ae4ed3ee",
+  "videoBytes": 704925,
+  "durationSeconds": 140.0,
+  "dimensions": {
+    "width": 1920,
+    "height": 1080
+  },
+  "frameRate": "12/1",
+  "codec": "h264",
+  "encoding": {
+    "crf": 28,
+    "preset": "veryfast",
+    "tune": "stillimage"
+  },
+  "ffmpegVersion": "ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers",
+  "sourceFrames": [
+    {
+      "file": "01-overview.jpg",
+      "sha256": "5dc5a39cad79a8435fab52e0b0f2618d00778724dbd39752dafd47fd3c4c87cf",
+      "width": 1348,
+      "height": 926,
+      "durationSeconds": 17,
+      "title": "One budget.\nAcross chains.",
+      "caption": "CommitBook counts pending commitments as well as completed payments. This recorded local run uses a 100-unit cap and valueless demo tokens."
+    },
+    {
+      "file": "02-plan.jpg",
+      "sha256": "d9feacdbc0d6de01f59aec37ab45b49e409b863205a952158be2cd74a09a7d72",
+      "width": 1348,
+      "height": 926,
+      "durationSeconds": 18,
+      "title": "A model proposes.\nReview the terms.",
+      "caption": "Actual Qwen inference turns the purchase goal into a typed recommendation. Approved catalog terms and owner policy determine payment authority."
+    },
+    {
+      "file": "03-reserved.jpg",
+      "sha256": "a04d511a5ce87cbdeddadcedebb0a49df4190d20f19866c457c2d3d3db432abf",
+      "width": 1348,
+      "height": 926,
+      "durationSeconds": 17,
+      "title": "Reserve 60.\nSpend nothing yet.",
+      "caption": "The coordinator reserves 60 units before the delayed grant reaches the vault. Available capacity falls to 40. The purchase counts before its supplier is paid."
+    },
+    {
+      "file": "04-blocked.jpg",
+      "sha256": "0f220f1995e606b393d67ea1827b4aa960cdc6bd6ddf2d42a512a161b60b3b39",
+      "width": 1348,
+      "height": 926,
+      "durationSeconds": 17,
+      "title": "The next 60\ncannot fit.",
+      "caption": "A second 60-unit request would require 120 units in combined capacity. The runtime rechecks live capacity and blocks the proposal because only 40 units remain."
+    },
+    {
+      "file": "05-cancelled.jpg",
+      "sha256": "16c40652d62795a26be9c5b291f34311723f80259c5a95bbc2e5e8dd4595e0d6",
+      "width": 1348,
+      "height": 926,
+      "durationSeconds": 18,
+      "title": "A lost receipt\nkeeps funds held.",
+      "caption": "The first operation closes, but its receipt is dropped. A late grant cannot reopen the closed permit. Capacity stays reserved until closure is verified."
+    },
+    {
+      "file": "06-recovered.jpg",
+      "sha256": "7d60ea96dc49224886c254118e721e1346651fc5e21a192585d3f5063eebbe4e",
+      "width": 1348,
+      "height": 926,
+      "durationSeconds": 18,
+      "title": "Verify closure.\nRelease the 60.",
+      "caption": "Recovering the receipt alone still holds the reservation. The local finalizer confirms zero consumption and finalized closure. Only then does capacity return."
+    },
+    {
+      "file": "07-paid.jpg",
+      "sha256": "bf536fd5c6dc4f93d51c0ee6da1be4445a10e942cf7aed7ca551df43b9901b44",
+      "width": 1348,
+      "height": 926,
+      "durationSeconds": 18,
+      "title": "Pay 55 once.\nA retry pays zero.",
+      "caption": "The approved replacement pays 55 units on the local Unichain EVM. Repeating execution transfers nothing. The final budget has 45 units available."
+    },
+    {
+      "file": "08-submission.jpg",
+      "sha256": "d6ddd49a75f57803bd4975cd13ce43aacd77e3a400f1a8c8b2fba6c9937d7cf2",
+      "width": 1348,
+      "height": 926,
+      "durationSeconds": 17,
+      "title": "The public\nloop is next.",
+      "caption": "The public AI proposal is prepared. The isolated test wallet still needs funding for Base Sepolia and Lasna. Public on-chain proof remains pending."
+    }
+  ],
+  "claims": {
+    "localBudgetCap": 100,
+    "initialReservation": 60,
+    "competingRequest": 60,
+    "replacementPayment": 55,
+    "finalReserved": 0,
+    "finalSpent": 55,
+    "finalAvailable": 45,
+    "duplicateExecutionTransfers": 0,
+    "publicAiProposal": "prepared",
+    "publicExecution": "awaiting testnet funding"
+  },
+  "limitations": [
+    "The video composes captured browser stills; it is not continuous screen-recording evidence.",
+    "The local workflow does not prove public Reactive transport or source-chain finality.",
+    "The builder hashes supplied captures but does not attest to their provenance or validate caption claims.",
+    "The closing scene explicitly preserves public execution as pending; replace it after verified public execution."
+  ]
+}
