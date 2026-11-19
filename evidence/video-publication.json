@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-19T13:53:19.070Z",
+  "mode": "anonymous-public-read",
+  "scope": "local-preview",
+  "publicTestnetExecution": false,
+  "sourceCommit": "93f7b4b6dac08a9e77241ac75d4a7f4691f9bc8a",
+  "durationSeconds": 140,
+  "bytes": 704925,
+  "sha256": "165e196dd803ed158ee4229b2d9fd2ba65bf4f77fcae6f75ae7a7b32ae4ed3ee",
+  "url": "https://raw.githubusercontent.com/wms2537/commitbook/93f7b4b6dac08a9e77241ac75d4a7f4691f9bc8a/demo/commitbook-walkthrough.mp4"
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-19T13:36:23.110Z",
+  "checkedAt": "2026-11-19T13:51:20.757Z",
   "readOnly": true,
   "ok": true,
   "funding": {
@@ -27,15 +27,15 @@
         "check": "nonempty-bytecode-only"
       },
       "latestBlock": {
-        "number": "8737220",
-        "hash": "0xfb89263f3468d3bb4e58828c2a6f8f1b2cdbaaaed994e0591565de496c4b5cb1",
-        "timestamp": "2026-11-19T13:36:17.000Z",
+        "number": "8738067",
+        "hash": "0x2da3987832d8a1d9ff92b0d58daf69c92a7dbd910a0c88834f58d51c543b2fae",
+        "timestamp": "2026-11-19T13:51:18.000Z",
         "baseFeePerGasWei": "100000000000"
       },
       "finalizedBlock": {
-        "number": "8737220",
-        "hash": "0xfb89263f3468d3bb4e58828c2a6f8f1b2cdbaaaed994e0591565de496c4b5cb1",
-        "timestamp": "2026-11-19T13:36:17.000Z",
+        "number": "8738067",
+        "hash": "0x2da3987832d8a1d9ff92b0d58daf69c92a7dbd910a0c88834f58d51c543b2fae",
+        "timestamp": "2026-11-19T13:51:18.000Z",
         "baseFeePerGasWei": "100000000000"
       },
       "gasPriceWei": "100000000000",
@@ -75,15 +75,15 @@
         "check": "nonempty-bytecode-only"
       },
       "latestBlock": {
-        "number": "60867571",
-        "hash": "0x3eee120576e9c0bfa2e93833f0199d513d11b980ccc34ec0f171b04d776591d4",
-        "timestamp": "2026-11-19T13:36:23.000Z",
+        "number": "60872039",
+        "hash": "0x844566c20074f70bc3c1be2586c946db10141e548f54a1f1f7f6c2cc2ed0be5d",
+        "timestamp": "2026-11-19T13:51:16.000Z",
         "baseFeePerGasWei": "5000000"
       },
       "finalizedBlock": {
-        "number": "60862651",
-        "hash": "0x1909fb3a75dd864612315993ad4360bc54b9108867269481cb1d113f9e25b03b",
-        "timestamp": "2026-11-19T13:19:59.000Z",
+        "number": "60866226",
+        "hash": "0x9cc847e171104e8c3d193980a5795f21b607deaa42b33e2c628d04208263d48c",
+        "timestamp": "2026-11-19T13:31:54.000Z",
         "baseFeePerGasWei": "5000000"
       },
       "gasPriceWei": "6000000",

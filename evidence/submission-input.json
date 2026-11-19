@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "repository": {
     "url": "https://github.com/wms2537/commitbook",
-    "commit": null
+    "commit": "93f7b4b6dac08a9e77241ac75d4a7f4691f9bc8a"
   },
   "video": {
     "path": "demo/commitbook-walkthrough.mp4",
-    "url": "https://raw.githubusercontent.com/wms2537/commitbook/main/demo/commitbook-walkthrough.mp4",
+    "url": "https://raw.githubusercontent.com/wms2537/commitbook/93f7b4b6dac08a9e77241ac75d4a7f4691f9bc8a/demo/commitbook-walkthrough.mp4",
     "scope": "local-preview"
   }
 }
