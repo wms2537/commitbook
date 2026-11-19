@@ -1,0 +1,17 @@
+{
+  "startedAt": "2026-11-15T18:52:05.761Z",
+  "mode": "local-evm-and-mocked-finality",
+  "publicTestnetExecution": false,
+  "aiInference": false,
+  "compiler": "0.8.29+commit.ab55807c.Emscripten.clang",
+  "compilerWarnings": 0,
+  "node": "v24.22.1",
+  "reactiveSdkRevision": "3ade0dcf1d27e67e5783ef807e73a1b9e0c0cce8",
+  "testsPassed": 41,
+  "testsFailed": 0,
+  "testProcessExitCode": 0,
+  "success": true,
+  "sourceSha256": "c46f9b223ac1fc98ac35a517e19299aa1329899cb94359148eb968c025784c98",
+  "demoExitCode": 0,
+  "finishedAt": "2026-11-15T18:52:44.214Z"
+}

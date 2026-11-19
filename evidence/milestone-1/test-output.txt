@@ -1,0 +1,268 @@
+TAP version 13
+# This version of µWS is not compatible with your Node.js build:
+# Error: Cannot find module '../binaries/uws_linux_x64_137.node'
+# Require stack:
+# - /workspace/scratch/a164461adc99/commitbook/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+# - /workspace/scratch/a164461adc99/commitbook/node_modules/ganache/dist/node/core.js
+# Falling back to a NodeJS implementation; performance may be degraded.
+# Subtest: two chains share one cap; cancellation before grant prevents resurrection and permits safe reallocation
+ok 1 - two chains share one cap; cancellation before grant prevents resurrection and permits safe reallocation
+  ---
+  duration_ms: 6396.532437
+  type: 'test'
+  ...
+# Subtest: duplicate grants, executions and spend receipts have one business effect
+ok 2 - duplicate grants, executions and spend receipts have one business effect
+  ---
+  duration_ms: 2356.78995
+  type: 'test'
+  ...
+# Subtest: missing closure acknowledgement keeps the reservation locked despite remote cancellation
+ok 3 - missing closure acknowledgement keeps the reservation locked despite remote cancellation
+  ---
+  duration_ms: 991.383665
+  type: 'test'
+  ...
+# Subtest: source and destination authenticate their callers; a forged reactive identity cannot activate a permit
+ok 4 - source and destination authenticate their callers; a forged reactive identity cannot activate a permit
+  ---
+  duration_ms: 843.032642
+  type: 'test'
+  ...
+# Subtest: wrong source chain, emitter and malformed event layout cannot settle a commitment
+ok 5 - wrong source chain, emitter and malformed event layout cannot settle a commitment
+  ---
+  duration_ms: 1680.240732
+  type: 'test'
+  ...
+# Subtest: a spent closure may precede the spend receipt without a refund or double count
+ok 6 - a spent closure may precede the spend receipt without a refund or double count
+  ---
+  duration_ms: 1524.707816
+  type: 'test'
+  ...
+# Subtest: closed unused authorization cannot become spent from a contradictory later receipt
+ok 7 - closed unused authorization cannot become spent from a contradictory later receipt
+  ---
+  duration_ms: 1463.195551
+  type: 'test'
+  ...
+# Subtest: failed token transfer rolls back consumption and immutable grant fields cannot be changed
+ok 8 - failed token transfer rolls back consumption and immutable grant fields cannot be changed
+  ---
+  duration_ms: 1801.533028
+  type: 'test'
+  ...
+# Subtest: expired authorization cannot pay and time passing does not replenish the shared budget
+ok 9 - expired authorization cannot pay and time passing does not replenish the shared budget
+  ---
+  duration_ms: 639.878461
+  type: 'test'
+  ...
+# Subtest: cancellation observed before its original request cannot later create spending authority
+ok 10 - cancellation observed before its original request cannot later create spending authority
+  ---
+  duration_ms: 641.963886
+  type: 'test'
+  ...
+# Subtest: canonical finalized closure validates both zero consumption and full consumption
+ok 11 - canonical finalized closure validates both zero consumption and full consumption
+  ---
+  duration_ms: 17.633657
+  type: 'test'
+  ...
+# Subtest: closed-before-grant tombstone is valid when finalized consumed amount is zero
+ok 12 - closed-before-grant tombstone is valid when finalized consumed amount is zero
+  ---
+  duration_ms: 3.937062
+  type: 'test'
+  ...
+# Subtest: a disappeared receipt cannot release a reservation
+ok 13 - a disappeared receipt cannot release a reservation
+  ---
+  duration_ms: 2.099245
+  type: 'test'
+  ...
+# Subtest: a reverted source transaction cannot establish closure
+ok 14 - a reverted source transaction cannot establish closure
+  ---
+  duration_ms: 1.451422
+  type: 'test'
+  ...
+# Subtest: receipt substitution and a receipt relocated by reorg are rejected
+ok 15 - receipt substitution and a receipt relocated by reorg are rejected
+  ---
+  duration_ms: 7.254883
+  type: 'test'
+  ...
+# Subtest: a once observed block that is no longer canonical is rejected
+ok 16 - a once observed block that is no longer canonical is rejected
+  ---
+  duration_ms: 1.872362
+  type: 'test'
+  ...
+# Subtest: finality must cover the closure block, regardless of other confirmation counts
+ok 17 - finality must cover the closure block, regardless of other confirmation counts
+  ---
+  duration_ms: 1.814543
+  type: 'test'
+  ...
+# Subtest: an absent finalized tag and a changing finalized checkpoint both reject
+ok 18 - an absent finalized tag and a changing finalized checkpoint both reject
+  ---
+  duration_ms: 3.529254
+  type: 'test'
+  ...
+# Subtest: the exact event at the observed global log index is required
+ok 19 - the exact event at the observed global log index is required
+  ---
+  duration_ms: 5.968733
+  type: 'test'
+  ...
+# Subtest: an altered consumed outcome, malformed event, or removed log cannot verify
+ok 20 - an altered consumed outcome, malformed event, or removed log cannot verify
+  ---
+  duration_ms: 4.844534
+  type: 'test'
+  ...
+# Subtest: the permit must be permanently CLOSED at the finalized checkpoint
+ok 21 - the permit must be permanently CLOSED at the finalized checkpoint
+  ---
+  duration_ms: 11.256604
+  type: 'test'
+  ...
+# Subtest: receipt and closed permit cannot substitute for the coordinator-bound evidence digest
+ok 22 - receipt and closed permit cannot substitute for the coordinator-bound evidence digest
+  ---
+  duration_ms: 1.631005
+  type: 'test'
+  ...
+# Subtest: source chain identity and configured route are part of the check
+ok 23 - source chain identity and configured route are part of the check
+  ---
+  duration_ms: 2.475427
+  type: 'test'
+  ...
+# Subtest: a changed pending proof is rejected before signing; an already finalized closure is a no-op
+ok 24 - a changed pending proof is rejected before signing; an already finalized closure is a no-op
+  ---
+  duration_ms: 1.676638
+  type: 'test'
+  ...
+# Subtest: the read-only workflow pins permit state to an exact finalized canonical block hash
+ok 25 - the read-only workflow pins permit state to an exact finalized canonical block hash
+  ---
+  duration_ms: 8.069972
+  type: 'test'
+  ...
+# Subtest: unavailable source RPC and unsupported finalized tags fail without fallback
+ok 26 - unavailable source RPC and unsupported finalized tags fail without fallback
+  ---
+  duration_ms: 6.329679
+  type: 'test'
+  ...
+# Subtest: a node without block-hash state reads is rejected without numeric or latest fallback
+ok 27 - a node without block-hash state reads is rejected without numeric or latest fallback
+  ---
+  duration_ms: 2.672931
+  type: 'test'
+  ...
+# Subtest: an already finalized commitment returns before source reads or signer access
+ok 28 - an already finalized commitment returns before source reads or signer access
+  ---
+  duration_ms: 3.098016
+  type: 'test'
+  ...
+# Subtest: provider failures cannot expose RPC credentials or signed payloads through errors
+ok 29 - provider failures cannot expose RPC credentials or signed payloads through errors
+  ---
+  duration_ms: 0.262932
+  type: 'test'
+  ...
+# Subtest: finalizer refuses an outstanding signer transaction instead of spending gas on a duplicate
+ok 30 - finalizer refuses an outstanding signer transaction instead of spending gas on a duplicate
+  ---
+  duration_ms: 0.369472
+  type: 'test'
+  ...
+# Subtest: confirmed transaction resumes at zero balance without signing or rebroadcast
+ok 31 - confirmed transaction resumes at zero balance without signing or rebroadcast
+  ---
+  duration_ms: 88.254769
+  type: 'test'
+  ...
+# Subtest: prepared transaction recovers the same saved signed bytes and hash
+ok 32 - prepared transaction recovers the same saved signed bytes and hash
+  ---
+  duration_ms: 16.744573
+  type: 'test'
+  ...
+# Subtest: an already pending transaction is recovered without another broadcast
+ok 33 - an already pending transaction is recovered without another broadcast
+  ---
+  duration_ms: 17.064666
+  type: 'test'
+  ...
+# Subtest: wrong RPC chain blocks before signing or broadcasting
+ok 34 - wrong RPC chain blocks before signing or broadcasting
+  ---
+  duration_ms: 7.682752
+  type: 'test'
+  ...
+# Subtest: new transaction rejects zero funds and insufficient maximum gas cost before signing
+ok 35 - new transaction rejects zero funds and insufficient maximum gas cost before signing
+  ---
+  duration_ms: 9.924956
+  type: 'test'
+  ...
+# Subtest: changed transaction intent cannot reuse a saved journal entry
+ok 36 - changed transaction intent cannot reuse a saved journal entry
+  ---
+  duration_ms: 13.33948
+  type: 'test'
+  ...
+# Subtest: exclusive workflow lock blocks concurrent writers and release is idempotent
+ok 37 - exclusive workflow lock blocks concurrent writers and release is idempotent
+  ---
+  duration_ms: 11.88221
+  type: 'test'
+  ...
+# Subtest: funding planning remains an honest report and faucet requires explicit bounded broadcast
+ok 38 - funding planning remains an honest report and faucet requires explicit bounded broadcast
+  ---
+  duration_ms: 1.806503
+  type: 'test'
+  ...
+# Subtest: accounting reads one block and rejects a changed canonical hash
+ok 39 - accounting reads one block and rejects a changed canonical hash
+  ---
+  duration_ms: 0.682773
+  type: 'test'
+  ...
+# This version of µWS is not compatible with your Node.js build:
+# Error: Cannot find module '../binaries/uws_linux_x64_137.node'
+# Require stack:
+# - /workspace/scratch/a164461adc99/commitbook/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+# - /workspace/scratch/a164461adc99/commitbook/node_modules/ganache/dist/node/core.js
+# Falling back to a NodeJS implementation; performance may be degraded.
+# Subtest: authorized cancellation retry republishes a missed closure without reopening or releasing twice
+ok 40 - authorized cancellation retry republishes a missed closure without reopening or releasing twice
+  ---
+  duration_ms: 4169.701466
+  type: 'test'
+  ...
+# Subtest: authorized grant retry republishes a missed payment receipt and never pays twice
+ok 41 - authorized grant retry republishes a missed payment receipt and never pays twice
+  ---
+  duration_ms: 1423.650205
+  type: 'test'
+  ...
+1..41
+# tests 41
+# suites 0
+# pass 41
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 30585.801981
