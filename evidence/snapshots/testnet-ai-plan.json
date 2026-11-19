@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "mode": "public-testnet-ai",
+  "owner": "0x4C4543217e66Ac3124d795785C63fa160B181C25",
+  "createdAt": "2026-11-19T13:10:59.044Z",
+  "validUntil": "2026-11-20T13:10:59.044Z",
+  "chainIds": {
+    "origin": 84532,
+    "reactive": 5318007,
+    "destination": 84532
+  },
+  "input": {
+    "goal": "Extract invoice fields privately within 120 seconds.",
+    "offers": [
+      {
+        "id": "aster-extract",
+        "name": "Aster Extract",
+        "chain": "base",
+        "chainId": 84532,
+        "amount": 60,
+        "etaSeconds": 45,
+        "privacy": "private",
+        "service": "invoice-extraction",
+        "description": "Private invoice extraction with a short delivery estimate.",
+        "available": true,
+        "recipient": "0x4C4543217e66Ac3124d795785C63fa160B181C25",
+        "demonstrationOnly": true
+      }
+    ],
+    "policy": {
+      "allowedOfferIds": [
+        "aster-extract"
+      ],
+      "allowedChainIds": [
+        84532
+      ],
+      "maxPerPurchase": 60,
+      "requiredService": "invoice-extraction",
+      "maxEtaSeconds": 120,
+      "requirePrivate": true,
+      "available": 100,
+      "reserved": 0
+    },
+    "context": {
+      "phase": "initial"
+    }
+  },
+  "result": {
+    "proposal": {
+      "action": "purchase",
+      "offerId": "aster-extract",
+      "reason": "Aster Extract meets the interpreted requirements at 60 units. The service is capable of extracting invoice fields privately within 120 seconds."
+    },
+    "authorization": {
+      "executable": true,
+      "requiresClosure": false,
+      "blockedReason": null
+    },
+    "interpretation": {
+      "service": "invoice-extraction",
+      "privacy": "private",
+      "priority": "fastest",
+      "failureType": "none",
+      "reason": "The service is capable of extracting invoice fields privately within 120 seconds."
+    },
+    "inference": {
+      "performed": true,
+      "provider": "local-llama.cpp-stdio",
+      "model": "commitbook-qwen2.5-1.5b",
+      "plannerVersion": "semantic-router-v3",
+      "durationMs": 7512,
+      "inputTokens": 240,
+      "outputTokens": 40,
+      "promptSha256": "1f0fb930fd7c4ae1780853d4f90e86e884f950d6b4ee9e86fcbf2f7b2fe5a881"
+    }
+  },
+  "source": {
+    "algorithm": "sha256",
+    "sha256": "dfe645dcd7be02a5fb1fdf011d92ef6777974d3cb40bf2c2d31c94fbef3a0301",
+    "paths": [
+      "agent",
+      "scripts/evaluate-agent.mjs",
+      "scripts/model-worker.py",
+      "scripts/serve-model.py",
+      "scripts/setup-model.py",
+      "scripts/lib/source-fingerprint.mjs",
+      "app/catalog.mjs",
+      "contracts",
+      "scripts/compile.mjs",
+      "scripts/deploy-testnet.mjs",
+      "scripts/live-loop.mjs",
+      "scripts/live-agent.mjs",
+      "scripts/lib/live.mjs",
+      "scripts/lib/public-plan.mjs"
+    ]
+  },
+  "scope": "Operator-reviewed semantic routing for a valueless demo-token purchase. No invoice processing service is supplied.",
+  "sha256": "11aea1dee852900c4009bb1a6d80a9268f3686227b0333f6b3b9ba7236ca3f77"
+}

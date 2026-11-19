@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "mode": "public-testnet",
+  "owner": "0x4C4543217e66Ac3124d795785C63fa160B181C25",
+  "createdAt": "2026-11-15T18:46:26.691Z",
+  "sdkCommit": "3ade0dcf1d27e67e5783ef807e73a1b9e0c0cce8",
+  "compiler": "0.8.29+commit.ab55807c.Emscripten.clang",
+  "evmVersion": "shanghai",
+  "chainIds": {
+    "base": 84532,
+    "reactive": 5318007
+  },
+  "scope": "One Base Sepolia origin, Lasna coordinator, and Base Sepolia destination using a valueless demo token.",
+  "budgetCap": "100",
+  "demoRecipient": "0x4C4543217e66Ac3124d795785C63fa160B181C25",
+  "contracts": {},
+  "transactions": {},
+  "publicTestnetExecution": false,
+  "aiInference": false,
+  "status": "awaiting-testnet-funding",
+  "checkedAt": "2026-11-15T18:51:15.953Z",
+  "funding": {
+    "ready": false,
+    "networks": [
+      {
+        "chainId": 84532,
+        "symbol": "ETH",
+        "balanceWei": "0",
+        "balanceNative": "0",
+        "planningThresholdWei": "1000000000000000",
+        "planningThresholdNative": "0.001",
+        "funded": false
+      },
+      {
+        "chainId": 5318007,
+        "symbol": "lREACT",
+        "balanceWei": "0",
+        "balanceNative": "0",
+        "planningThresholdWei": "600000000000000000",
+        "planningThresholdNative": "0.6",
+        "funded": false
+      }
+    ],
+    "note": "Planning thresholds, not measured minimums or gas quotes. Includes deployment value deposits. Before signing or rebroadcast, the script checks value plus the maximum execution gas fee against the account balance. OP-stack L1 data fees are additional and this bound does not quote the total fee."
+  },
+  "lastRunBroadcast": false
+}
