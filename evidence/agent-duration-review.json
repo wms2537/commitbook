@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-16T03:07:58.353Z",
+  "purpose": "Replay recorded V3 interpretations after compact-duration and unparsed-timing guard fix.",
+  "newNeuralInferencePerformed": false,
+  "sourceEvaluation": "evidence/agent-evaluation-v3-initial.json",
+  "sourceDatasetSha256": "3f0aca56e93c60b612e3b17dfe65f027473c308a7c8a215bb0fad687c7f256c4",
+  "intentSourceSha256": "65ca75e2021f6d0e7480ffec3d37555f0692c69bcccea2c76aac9042aeff451b",
+  "cases": [
+    {
+      "id": "economical-batch",
+      "matchesPreviousDecision": true,
+      "action": "purchase",
+      "offerId": "swift-invoice"
+    },
+    {
+      "id": "dedicated-worker",
+      "matchesPreviousDecision": true,
+      "action": "purchase",
+      "offerId": "swift-invoice"
+    },
+    {
+      "id": "one-minute-window",
+      "matchesPreviousDecision": true,
+      "action": "purchase",
+      "offerId": "swift-invoice"
+    },
+    {
+      "id": "already-structured-figures",
+      "matchesPreviousDecision": true,
+      "action": "purchase",
+      "offerId": "independent-check"
+    },
+    {
+      "id": "shared-worker-acceptable",
+      "matchesPreviousDecision": true,
+      "action": "purchase",
+      "offerId": "swift-invoice"
+    },
+    {
+      "id": "unsupported-translation",
+      "matchesPreviousDecision": true,
+      "action": "purchase",
+      "offerId": "swift-invoice"
+    },
+    {
+      "id": "owner-deadline-no-fit",
+      "matchesPreviousDecision": true,
+      "action": "escalate",
+      "offerId": null
+    },
+    {
+      "id": "capacity-held-elsewhere",
+      "matchesPreviousDecision": true,
+      "action": "wait",
+      "offerId": null
+    },
+    {
+      "id": "service-withdrawn",
+      "matchesPreviousDecision": true,
+      "action": "escalate",
+      "offerId": null
+    },
+    {
+      "id": "brief-maintenance",
+      "matchesPreviousDecision": true,
+      "action": "wait",
+      "offerId": null
+    },
+    {
+      "id": "lost-acknowledgement",
+      "matchesPreviousDecision": true,
+      "action": "escalate",
+      "offerId": null
+    },
+    {
+      "id": "injected-release-command",
+      "matchesPreviousDecision": true,
+      "action": "replace",
+      "offerId": "private-invoice"
+    }
+  ],
+  "summary": {
+    "cases": 12,
+    "unchangedDecisions": 12
+  }
+}

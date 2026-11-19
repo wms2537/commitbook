@@ -1,0 +1,417 @@
+{
+  "mode": "local-evm",
+  "passed": false,
+  "publicTestnetExecution": false,
+  "aiInference": true,
+  "error": {
+    "code": "SCENARIO_ASSERTION_FAILED"
+  },
+  "state": {
+    "sessionId": "8a36f072-345c-41aa-9248-8faeddf685fa",
+    "mode": "local-evm",
+    "publicTestnetExecution": false,
+    "aiInference": true,
+    "model": {
+      "provider": "local-llama.cpp-stdio",
+      "model": "commitbook-qwen2.5-1.5b",
+      "ready": true
+    },
+    "busy": false,
+    "busyAction": null,
+    "budget": {
+      "cap": 100,
+      "reserved": 60,
+      "spent": 0,
+      "available": 40
+    },
+    "payments": {
+      "base": 0,
+      "unichain": 0
+    },
+    "vaultBalances": {
+      "base": 1000,
+      "unichain": 1000
+    },
+    "offers": [
+      {
+        "id": "aster-extract",
+        "name": "Aster Extract",
+        "chain": "base",
+        "chainId": 84532,
+        "amount": 60,
+        "etaSeconds": 45,
+        "privacy": "private",
+        "service": "invoice-extraction",
+        "description": "Private invoice extraction with a short delivery estimate.",
+        "available": false,
+        "recipient": "0xd03ea8624C8C5987235048901fB614fDcA89b117",
+        "vault": "0xD833215cBcc3f914bD1C9ece3EE7BF8B14f841bb",
+        "demonstrationOnly": true
+      },
+      {
+        "id": "helio-extract",
+        "name": "Helio Extract",
+        "chain": "unichain",
+        "chainId": 1301,
+        "amount": 60,
+        "etaSeconds": 20,
+        "privacy": "shared",
+        "service": "invoice-extraction",
+        "description": "Fast invoice extraction using shared processing.",
+        "available": true,
+        "recipient": "0xd03ea8624C8C5987235048901fB614fDcA89b117",
+        "vault": "0xCfEB869F69431e42cdB54A4F4f105C19C080A601",
+        "demonstrationOnly": true
+      },
+      {
+        "id": "quill-extract",
+        "name": "Quill Extract",
+        "chain": "unichain",
+        "chainId": 1301,
+        "amount": 55,
+        "etaSeconds": 90,
+        "privacy": "private",
+        "service": "invoice-extraction",
+        "description": "Lower-cost private invoice extraction with a longer delivery estimate.",
+        "available": true,
+        "recipient": "0xd03ea8624C8C5987235048901fB614fDcA89b117",
+        "vault": "0xCfEB869F69431e42cdB54A4F4f105C19C080A601",
+        "demonstrationOnly": true
+      },
+      {
+        "id": "proofline-verify",
+        "name": "Proofline Verify",
+        "chain": "unichain",
+        "chainId": 1301,
+        "amount": 60,
+        "etaSeconds": 30,
+        "privacy": "private",
+        "service": "invoice-verification",
+        "description": "Private validation of invoice fields and arithmetic.",
+        "available": true,
+        "recipient": "0xd03ea8624C8C5987235048901fB614fDcA89b117",
+        "vault": "0xCfEB869F69431e42cdB54A4F4f105C19C080A601",
+        "demonstrationOnly": true
+      }
+    ],
+    "plans": [
+      {
+        "id": "c3ab396d-5652-4574-886b-53c05da1e93d",
+        "createdAt": "2026-11-16T02:58:46.932Z",
+        "goal": "Choose the fastest private invoice-extraction service for a batch of invoices. Delivery must be within 120 seconds.",
+        "policySettings": {
+          "requiredService": "invoice-extraction",
+          "requirePrivate": true,
+          "maxEtaSeconds": 120
+        },
+        "context": {
+          "phase": "initial",
+          "pendingCancellation": false
+        },
+        "proposal": {
+          "action": "purchase",
+          "offerId": "aster-extract",
+          "reason": "Aster Extract meets the interpreted requirements at 60 units. The service is designed for private invoice extraction with a short delivery estimate, which matches the goal of delivering invoices within 120 seconds."
+        },
+        "authorization": {
+          "executable": false,
+          "requiresClosure": false,
+          "blockedReason": "plan-already-executed"
+        },
+        "inference": {
+          "performed": true,
+          "provider": "local-llama.cpp-stdio",
+          "model": "commitbook-qwen2.5-1.5b",
+          "durationMs": 20506,
+          "inputTokens": 270,
+          "outputTokens": 52,
+          "promptSha256": "01c98c29b76a10c39c0c891e6f3f12e0b60ced96bd5b3e1f8f4e05b53eaa9fd8"
+        },
+        "operationId": "0x2a5e2606a9912b5a88caf184d17bf19244333c4d2f705a2bf5472c57dee41f38"
+      },
+      {
+        "id": "72c073ac-8a31-42ee-a478-5d872197c166",
+        "createdAt": "2026-11-16T02:58:57.975Z",
+        "goal": "Buy an independent invoice-verification service for extracted invoice fields and arithmetic. Require private processing within 120 seconds.",
+        "policySettings": {
+          "requiredService": "invoice-verification",
+          "requirePrivate": true,
+          "maxEtaSeconds": 120
+        },
+        "context": {
+          "phase": "initial",
+          "pendingCancellation": false
+        },
+        "proposal": {
+          "action": "purchase",
+          "offerId": "proofline-verify",
+          "reason": "Proofline Verify meets the interpreted requirements at 60 units. The service is designed for private processing within a short delivery estimate, which matches the requirement for a private invoice verification service with a short delivery estimate."
+        },
+        "authorization": {
+          "executable": false,
+          "requiresClosure": false,
+          "blockedReason": "insufficient-available-budget"
+        },
+        "inference": {
+          "performed": true,
+          "provider": "local-llama.cpp-stdio",
+          "model": "commitbook-qwen2.5-1.5b",
+          "durationMs": 10901,
+          "inputTokens": 270,
+          "outputTokens": 53,
+          "promptSha256": "c218681c2021f16576ccd420dc255c52d83cce2b44b82c082a5bc411f7af2a64"
+        }
+      },
+      {
+        "id": "737856c5-3db0-4023-a0f6-7a11d59b19f1",
+        "createdAt": "2026-11-16T02:59:09.502Z",
+        "goal": "Choose the fastest private invoice-extraction service for a batch of invoices. Delivery must be within 120 seconds.",
+        "policySettings": {
+          "requiredService": "invoice-extraction",
+          "requirePrivate": true,
+          "maxEtaSeconds": 120
+        },
+        "context": {
+          "phase": "supplier-failure",
+          "failureMessage": "Our isolated invoice workers cannot accept this batch. Their processing queue is offline until tomorrow, so retrying now will not start work. Please select another approved private supplier for this run.",
+          "currentOperationId": "0x2a5e2606a9912b5a88caf184d17bf19244333c4d2f705a2bf5472c57dee41f38",
+          "currentOfferId": "aster-extract",
+          "pendingCancellation": false,
+          "priorClosureFinalized": false
+        },
+        "proposal": {
+          "action": "escalate",
+          "offerId": null,
+          "reason": "A temporary interruption has no reliable duration for the requested deadline."
+        },
+        "authorization": {
+          "executable": false,
+          "requiresClosure": false,
+          "blockedReason": "human-review-required"
+        },
+        "inference": {
+          "performed": true,
+          "provider": "local-llama.cpp-stdio",
+          "model": "commitbook-qwen2.5-1.5b",
+          "durationMs": 10825,
+          "inputTokens": 312,
+          "outputTokens": 42,
+          "promptSha256": "7806e95c43bf74c3eb1e6e04a2628c2f2ff28fd0b7f2b5fb1e87c127ba30b1ca"
+        }
+      }
+    ],
+    "operations": [
+      {
+        "id": "0x2a5e2606a9912b5a88caf184d17bf19244333c4d2f705a2bf5472c57dee41f38",
+        "planId": "c3ab396d-5652-4574-886b-53c05da1e93d",
+        "offerId": "aster-extract",
+        "offerName": "Aster Extract",
+        "chain": "base",
+        "chainId": 84532,
+        "amount": 60,
+        "recipient": "0xd03ea8624C8C5987235048901fB614fDcA89b117",
+        "expiresAt": 1794790802,
+        "agent": "0xFFcf8FDEE72ac11b5c542428B35EEF5769C409f0",
+        "agentIndex": 1,
+        "createdAt": "2026-11-16T02:58:58.091Z",
+        "transactions": [
+          {
+            "chain": "base",
+            "chainId": "84532",
+            "transactionHash": "0x9d90986a52fdbe7745a3d691006dfee69e1c01ff3367a058c428b0db3ad3bfbb",
+            "blockNumber": 9,
+            "status": 1,
+            "from": "0xFFcf8FDEE72ac11b5c542428B35EEF5769C409f0",
+            "to": "0xe78A0F7E598Cc8b0Bb87894B0F60dD2a88d6a8Ab"
+          },
+          {
+            "chain": "reactive",
+            "chainId": "5318007",
+            "transactionHash": "0x1b6d09cc4767fb842460a67b9967e6cb96b1d419de3365b7b09d9fc07f381b63",
+            "blockNumber": 5,
+            "status": 1,
+            "from": "0x90F8bf6A479f320ead074411a4B0e7944Ea8c9C1",
+            "to": "0x8888888888888888888888888888888888888888"
+          }
+        ],
+        "status": "queued",
+        "consumed": 0,
+        "spent": 0,
+        "grantDelayed": true,
+        "receiptMissing": false,
+        "closureObserved": false,
+        "closureFinalized": false,
+        "actions": [
+          "cancel",
+          "late-grant",
+          "recover"
+        ],
+        "coordinatorState": 1,
+        "permitState": 0,
+        "requestRejected": false,
+        "reportedFailure": "Our isolated invoice workers cannot accept this batch. Their processing queue is offline until tomorrow, so retrying now will not start work. Please select another approved private supplier for this run."
+      }
+    ],
+    "events": [
+      {
+        "id": "3e114a8f-e2c3-411a-bd46-3e73578c858a",
+        "time": "2026-11-16T02:58:26.395Z",
+        "type": "session",
+        "title": "Local session ready",
+        "detail": "Three local EVMs share one 100-unit budget. Reactive transport and finality are simulated.",
+        "budget": {
+          "cap": 100,
+          "reserved": 0,
+          "spent": 0,
+          "available": 100
+        }
+      },
+      {
+        "id": "28eb0959-b138-474a-afaf-29157a3d4d62",
+        "time": "2026-11-16T02:58:46.932Z",
+        "type": "plan",
+        "title": "Plan ready",
+        "detail": "Aster Extract meets the interpreted requirements at 60 units. The service is designed for private invoice extraction with a short delivery estimate, which matches the goal of delivering invoices within 120 seconds.",
+        "budget": {
+          "cap": 100,
+          "reserved": 0,
+          "spent": 0,
+          "available": 100
+        }
+      },
+      {
+        "id": "56a3a70c-09f0-4b8c-aff6-8d8d5331a79e",
+        "time": "2026-11-16T02:58:57.975Z",
+        "type": "plan",
+        "title": "Plan ready",
+        "detail": "Proofline Verify meets the interpreted requirements at 60 units. The service is designed for private processing within a short delivery estimate, which matches the requirement for a private invoice verification service with a short delivery estimate.",
+        "budget": {
+          "cap": 100,
+          "reserved": 0,
+          "spent": 0,
+          "available": 100
+        }
+      },
+      {
+        "id": "38728e09-b68f-4549-aade-c35fa3f7c783",
+        "time": "2026-11-16T02:58:58.227Z",
+        "type": "request",
+        "title": "Agent request submitted",
+        "detail": "The authorized agent submitted immutable terms. Reservation still requires Reactive acceptance.",
+        "budget": {
+          "cap": 100,
+          "reserved": 0,
+          "spent": 0,
+          "available": 100
+        },
+        "operationId": "0x2a5e2606a9912b5a88caf184d17bf19244333c4d2f705a2bf5472c57dee41f38",
+        "transaction": {
+          "chain": "base",
+          "chainId": "84532",
+          "transactionHash": "0x9d90986a52fdbe7745a3d691006dfee69e1c01ff3367a058c428b0db3ad3bfbb",
+          "blockNumber": 9,
+          "status": 1,
+          "from": "0xFFcf8FDEE72ac11b5c542428B35EEF5769C409f0",
+          "to": "0xe78A0F7E598Cc8b0Bb87894B0F60dD2a88d6a8Ab"
+        }
+      },
+      {
+        "id": "38776b48-c713-46a4-b480-42c850c99a93",
+        "time": "2026-11-16T02:58:58.396Z",
+        "type": "reservation",
+        "title": "Budget reserved",
+        "detail": "60 units are reserved before destination permission.",
+        "budget": {
+          "cap": 100,
+          "reserved": 60,
+          "spent": 0,
+          "available": 40
+        },
+        "operationId": "0x2a5e2606a9912b5a88caf184d17bf19244333c4d2f705a2bf5472c57dee41f38",
+        "transaction": {
+          "chain": "reactive",
+          "chainId": "5318007",
+          "transactionHash": "0x1b6d09cc4767fb842460a67b9967e6cb96b1d419de3365b7b09d9fc07f381b63",
+          "blockNumber": 5,
+          "status": 1,
+          "from": "0x90F8bf6A479f320ead074411a4B0e7944Ea8c9C1",
+          "to": "0x8888888888888888888888888888888888888888"
+        }
+      },
+      {
+        "id": "c7272dc1-37ec-459a-bcfe-7dfbfe38a75f",
+        "time": "2026-11-16T02:58:58.451Z",
+        "type": "fault",
+        "title": "Approval deliberately delayed",
+        "detail": "The destination permission is held while its budget remains reserved.",
+        "budget": {
+          "cap": 100,
+          "reserved": 60,
+          "spent": 0,
+          "available": 40
+        },
+        "operationId": "0x2a5e2606a9912b5a88caf184d17bf19244333c4d2f705a2bf5472c57dee41f38"
+      },
+      {
+        "id": "36d7d0a7-6e31-4797-a330-bf62e0b49d66",
+        "time": "2026-11-16T02:58:58.630Z",
+        "type": "blocked",
+        "title": "Action blocked",
+        "detail": "Execution is blocked: insufficient-available-budget.",
+        "budget": {
+          "cap": 100,
+          "reserved": 60,
+          "spent": 0,
+          "available": 40
+        }
+      },
+      {
+        "id": "67c17487-0307-440f-91b7-8b682873eea7",
+        "time": "2026-11-16T02:58:58.675Z",
+        "type": "recovery",
+        "title": "Supplier failure reported",
+        "detail": "The selected offer is unavailable for new plans. This report is not evidence of cancellation or refund.",
+        "budget": {
+          "cap": 100,
+          "reserved": 60,
+          "spent": 0,
+          "available": 40
+        },
+        "operationId": "0x2a5e2606a9912b5a88caf184d17bf19244333c4d2f705a2bf5472c57dee41f38"
+      },
+      {
+        "id": "13b3517c-7cd9-43d0-9308-5e3be5dc350a",
+        "time": "2026-11-16T02:59:09.502Z",
+        "type": "plan",
+        "title": "Plan held",
+        "detail": "A temporary interruption has no reliable duration for the requested deadline.",
+        "budget": {
+          "cap": 100,
+          "reserved": 60,
+          "spent": 0,
+          "available": 40
+        }
+      }
+    ],
+    "policy": {
+      "allowedOfferIds": [
+        "aster-extract",
+        "helio-extract",
+        "quill-extract",
+        "proofline-verify"
+      ],
+      "allowedChainIds": [
+        84532,
+        1301
+      ],
+      "maxPerPurchase": 60,
+      "requiredService": "invoice-extraction",
+      "maxEtaSeconds": 120,
+      "requirePrivate": true,
+      "available": 40,
+      "reserved": 60
+    },
+    "finality": "Explicit trusted local finalizer. This session does not verify public-chain finality.",
+    "transport": "Actual Solidity on three independent local EVMs with simulated Reactive delivery."
+  }
+}

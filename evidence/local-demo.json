@@ -1,0 +1,288 @@
+{
+  "mode": "local-evm",
+  "publicTestnetExecution": false,
+  "aiInference": false,
+  "generatedAt": "2026-11-19T13:41:28.803Z",
+  "scenario": "Two 60-unit commitments share a 100-unit cap; a cancellation beats a delayed grant, then released capacity funds a new commitment on another chain.",
+  "transport": "Three independent Ganache EVMs. MockSystem and MockCallbackProxy explicitly substitute for Reactive transport.",
+  "finality": "A trusted test signer authorizes closure finalization. This demo does not verify public-chain finality.",
+  "assumptions": [
+    "Prefunded test tokens",
+    "Canonical local EVM histories",
+    "All-or-nothing purchase consumption",
+    "One budget denomination"
+  ],
+  "deployments": {
+    "coordinator": "0xe78A0F7E598Cc8b0Bb87894B0F60dD2a88d6a8Ab",
+    "inbox": "0xe78A0F7E598Cc8b0Bb87894B0F60dD2a88d6a8Ab",
+    "baseVault": "0xD833215cBcc3f914bD1C9ece3EE7BF8B14f841bb",
+    "unichainVault": "0xCfEB869F69431e42cdB54A4F4f105C19C080A601"
+  },
+  "steps": [
+    {
+      "label": "Owner approves a 100-unit spending cap over prefunded local vaults",
+      "accounting": {
+        "cap": "100",
+        "reserved": "0",
+        "spent": "0",
+        "available": "100"
+      },
+      "payments": {
+        "base": "0",
+        "unichain": "0"
+      },
+      "transactions": []
+    },
+    {
+      "label": "A reserves 60; its execution grant is deliberately delayed",
+      "accounting": {
+        "cap": "100",
+        "reserved": "60",
+        "spent": "0",
+        "available": "40"
+      },
+      "payments": {
+        "base": "0",
+        "unichain": "0"
+      },
+      "transactions": [
+        {
+          "chain": "base",
+          "chainId": "84532",
+          "transactionHash": "0xd34fffe8f751120d186d3f23b36b38c4176d3e195036d73783ed93ba1f30c785",
+          "blockNumber": 8,
+          "status": 1
+        },
+        {
+          "chain": "reactive",
+          "chainId": "5318007",
+          "transactionHash": "0x7de4c432c7c8d18f4d1b1b71d4a94095b8e1900b189c450346294d518a23fe5f",
+          "blockNumber": 5,
+          "status": 1
+        }
+      ]
+    },
+    {
+      "label": "B requests 60 on another chain and is rejected while only 40 remains",
+      "accounting": {
+        "cap": "100",
+        "reserved": "60",
+        "spent": "0",
+        "available": "40"
+      },
+      "payments": {
+        "base": "0",
+        "unichain": "0"
+      },
+      "transactions": [
+        {
+          "chain": "base",
+          "chainId": "84532",
+          "transactionHash": "0xbde046faa73e3d81c2c2f8526f9cf38fe2a2cd92a2e9e178d6fe5b4dca658642",
+          "blockNumber": 9,
+          "status": 1
+        },
+        {
+          "chain": "reactive",
+          "chainId": "5318007",
+          "transactionHash": "0x62de54b24bb327f850d4aacc3244f9574294049f089794c6a7cd2eb36d6ede3c",
+          "blockNumber": 6,
+          "status": 1
+        }
+      ]
+    },
+    {
+      "label": "A closes at the destination before its grant arrives; capacity stays reserved",
+      "accounting": {
+        "cap": "100",
+        "reserved": "60",
+        "spent": "0",
+        "available": "40"
+      },
+      "payments": {
+        "base": "0",
+        "unichain": "0"
+      },
+      "transactions": [
+        {
+          "chain": "base",
+          "chainId": "84532",
+          "transactionHash": "0x0374960c469cfa31224120d3d0c1fc40208b89c067c5e362aa4434ce2693683a",
+          "blockNumber": 10,
+          "status": 1
+        },
+        {
+          "chain": "reactive",
+          "chainId": "5318007",
+          "transactionHash": "0x86a45968b85a7ea587c56f378d256c1fa7c2ef27b62b132f853ee062d9c0f99e",
+          "blockNumber": 7,
+          "status": 1
+        },
+        {
+          "chain": "base",
+          "chainId": "84532",
+          "transactionHash": "0x94a102f97e5bfeea9e07c5f2e9eea0b0dd07a65e78979feaf50de9d9aadaba27",
+          "blockNumber": 11,
+          "status": 1
+        }
+      ]
+    },
+    {
+      "label": "The delayed grant cannot reopen A",
+      "accounting": {
+        "cap": "100",
+        "reserved": "60",
+        "spent": "0",
+        "available": "40"
+      },
+      "payments": {
+        "base": "0",
+        "unichain": "0"
+      },
+      "transactions": [
+        {
+          "chain": "base",
+          "chainId": "84532",
+          "transactionHash": "0x10691af547976d11356c6a44815873651721da4f30535aae4e98e888d3bdc14b",
+          "blockNumber": 12,
+          "status": 1
+        }
+      ]
+    },
+    {
+      "label": "Reactive observes the closure; observation alone does not release the reservation",
+      "accounting": {
+        "cap": "100",
+        "reserved": "60",
+        "spent": "0",
+        "available": "40"
+      },
+      "payments": {
+        "base": "0",
+        "unichain": "0"
+      },
+      "transactions": [
+        {
+          "chain": "reactive",
+          "chainId": "5318007",
+          "transactionHash": "0xd423a2b13372ae1ce5062c28ecfef4894723fb56a73114495d3b5835c6811d1c",
+          "blockNumber": 8,
+          "status": 1
+        }
+      ]
+    },
+    {
+      "label": "The trusted test finalizer confirms closure and releases unused capacity",
+      "accounting": {
+        "cap": "100",
+        "reserved": "0",
+        "spent": "0",
+        "available": "100"
+      },
+      "payments": {
+        "base": "0",
+        "unichain": "0"
+      },
+      "transactions": [
+        {
+          "chain": "reactive",
+          "chainId": "5318007",
+          "transactionHash": "0xd7641b8965115885bba529d4d1301e3899094bc0a7b82a46aa73dfaa12607979",
+          "blockNumber": 9,
+          "status": 1
+        }
+      ]
+    },
+    {
+      "label": "A new 60-unit purchase completes on Unichain and is reconciled",
+      "accounting": {
+        "cap": "100",
+        "reserved": "0",
+        "spent": "60",
+        "available": "40"
+      },
+      "payments": {
+        "base": "0",
+        "unichain": "60"
+      },
+      "transactions": [
+        {
+          "chain": "base",
+          "chainId": "84532",
+          "transactionHash": "0xe31c203f04f8d0c79e9956a1c8d33c872d81732a5180aa75a46e873edf248597",
+          "blockNumber": 13,
+          "status": 1
+        },
+        {
+          "chain": "reactive",
+          "chainId": "5318007",
+          "transactionHash": "0xce6bda7e4b24440627ab5c84bd7fac37e629f1dcb6680209d4fa5a8ef62e43ae",
+          "blockNumber": 10,
+          "status": 1
+        },
+        {
+          "chain": "unichain",
+          "chainId": "1301",
+          "transactionHash": "0x2bf32a7d3f1e0d9048371e7dac56bf24c8ae7d40d19ef0d6a663e5bdc4e299ae",
+          "blockNumber": 5,
+          "status": 1
+        },
+        {
+          "chain": "unichain",
+          "chainId": "1301",
+          "transactionHash": "0xf3db38068016919c0e4b25ea2dadbd9aac52959b96b8c3ced8a33b5eaf467617",
+          "blockNumber": 6,
+          "status": 1
+        },
+        {
+          "chain": "reactive",
+          "chainId": "5318007",
+          "transactionHash": "0x7ffa6d84afc119c53eedec6434855c265b5bd1396caee708d88a67d013d6b9d3",
+          "blockNumber": 11,
+          "status": 1
+        }
+      ]
+    },
+    {
+      "label": "Receipt replay and repeated execution do not pay again",
+      "accounting": {
+        "cap": "100",
+        "reserved": "0",
+        "spent": "60",
+        "available": "40"
+      },
+      "payments": {
+        "base": "0",
+        "unichain": "60"
+      },
+      "transactions": [
+        {
+          "chain": "reactive",
+          "chainId": "5318007",
+          "transactionHash": "0xb17df8acca955def42268cf4ea5d25a0781556ce787f009bb3b511f1fada920a",
+          "blockNumber": 12,
+          "status": 1
+        },
+        {
+          "chain": "unichain",
+          "chainId": "1301",
+          "transactionHash": "0xa572e26d294a4a6d6cd7546a2fd7e0271b3248f4ae39c9ea1fb3d426c3ecb58c",
+          "blockNumber": 7,
+          "status": 1
+        }
+      ]
+    }
+  ],
+  "result": {
+    "passed": true,
+    "finalAccounting": {
+      "cap": "100",
+      "reserved": "0",
+      "spent": "60",
+      "available": "40"
+    },
+    "totalPaid": "60",
+    "doublePayments": 0,
+    "cancelledGrantReopened": false
+  }
+}

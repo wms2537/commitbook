@@ -1,0 +1,148 @@
+{
+  "checkedAt": "2026-11-19T08:56:20.352Z",
+  "mode": "read-only-state-override-simulation",
+  "owner": "0x4C4543217e66Ac3124d795785C63fa160B181C25",
+  "compiler": "0.8.29+commit.ab55807c.Emscripten.clang",
+  "networks": {
+    "base": {
+      "chainId": 84532,
+      "rpc": "https://sepolia.base.org",
+      "symbol": "ETH",
+      "gasPriceWei": "6000000",
+      "actualBalanceNative": "0.0",
+      "nonce": 0,
+      "blockNumber": 60783392,
+      "blockHash": "0xe7311ba2bd769f899554d2f5ef7c938a864d915fb93e956fd461b49e37ed6a03"
+    },
+    "lasna": {
+      "chainId": 5318007,
+      "rpc": "https://lasna-rpc.rnk.dev/",
+      "symbol": "lREACT",
+      "gasPriceWei": "100000000000",
+      "actualBalanceNative": "0.0",
+      "nonce": 0,
+      "blockNumber": 8721409,
+      "blockHash": "0xcfc18d55279d87068ea61a57c8402967d1a027727bb271360f75734e31eab893"
+    }
+  },
+  "predictedAddresses": {
+    "inbox": "0x7C27C44E31E9554973DD7d6cBd22F8c8631000c8",
+    "coordinator": "0xcB9c935DFdE90C8A94e69CB6Bb2ac449645e184e",
+    "token": "0xaFA4213F19ca6D13703caEaED5d34b7Ea7c6aaeb",
+    "vault": "0x6CC45884B310a4345C9d0267EF89A3E72B986A83"
+  },
+  "estimates": [
+    {
+      "label": "deploy-coordinator",
+      "chainId": 5318007,
+      "symbol": "lREACT",
+      "valueNative": "0.1",
+      "creationCodeHash": "0x726c14f41fa95b42dfaf7313eb6744ca57ade25ed00b9b206f2b55d9a3737d8e",
+      "gasEstimate": "1959047",
+      "executionFeeAtObservedGasPriceNative": "0.1959047",
+      "executionFeeWith20PercentGasMarginNative": "0.2350857",
+      "success": true
+    },
+    {
+      "label": "deploy-token",
+      "chainId": 84532,
+      "symbol": "ETH",
+      "valueNative": "0.0",
+      "creationCodeHash": "0xe49fa1cd97eaef0f98ab0233112ea80ad38d5edc1894f0e692597885dbc0d9f1",
+      "gasEstimate": "287196",
+      "executionFeeAtObservedGasPriceNative": "0.000001723176",
+      "executionFeeWith20PercentGasMarginNative": "0.000002067816",
+      "success": true
+    },
+    {
+      "label": "deploy-inbox",
+      "chainId": 84532,
+      "symbol": "ETH",
+      "valueNative": "0.0",
+      "creationCodeHash": "0x7df8841b9740fa7af597ef31fecfc3e6db5982d165faf4e4fa85d7672229f022",
+      "gasEstimate": "503065",
+      "executionFeeAtObservedGasPriceNative": "0.00000301839",
+      "executionFeeWith20PercentGasMarginNative": "0.000003622068",
+      "success": true
+    },
+    {
+      "label": "deploy-vault",
+      "chainId": 84532,
+      "symbol": "ETH",
+      "valueNative": "0.0001",
+      "creationCodeHash": "0x8b9bced693d995a48cfcf9ba81e2bb731d586d411f41afcd9f277cd80d444925",
+      "gasEstimate": "918607",
+      "executionFeeAtObservedGasPriceNative": "0.000005511642",
+      "executionFeeWith20PercentGasMarginNative": "0.000006613974",
+      "success": true
+    },
+    {
+      "label": "allow-demo-supplier",
+      "chainId": 84532,
+      "symbol": "ETH",
+      "valueNative": "0.0",
+      "gasEstimate": "46103",
+      "executionFeeAtObservedGasPriceNative": "0.000000276618",
+      "executionFeeWith20PercentGasMarginNative": "0.000000331944",
+      "success": true
+    },
+    {
+      "label": "mint-demo-token",
+      "chainId": 84532,
+      "symbol": "ETH",
+      "valueNative": "0.0",
+      "gasEstimate": "46475",
+      "executionFeeAtObservedGasPriceNative": "0.00000027885",
+      "executionFeeWith20PercentGasMarginNative": "0.00000033462",
+      "success": true
+    },
+    {
+      "label": "configure-vault",
+      "chainId": 5318007,
+      "symbol": "lREACT",
+      "valueNative": "0.0",
+      "gasEstimate": "65646",
+      "executionFeeAtObservedGasPriceNative": "0.0065646",
+      "executionFeeWith20PercentGasMarginNative": "0.0078776",
+      "success": true
+    },
+    {
+      "label": "fund-lasna-0.006",
+      "chainId": 84532,
+      "symbol": "ETH",
+      "valueNative": "0.006",
+      "gasEstimate": "25938",
+      "executionFeeAtObservedGasPriceNative": "0.000000155628",
+      "executionFeeWith20PercentGasMarginNative": "0.000000186756",
+      "success": true
+    }
+  ],
+  "totals": [
+    {
+      "chainId": 84532,
+      "symbol": "ETH",
+      "allEstimatesSucceeded": true,
+      "gasEstimate": "1827384",
+      "valueDepositsNative": "0.0061",
+      "executionFeeAtObservedGasPriceNative": "0.000010964304",
+      "valuePlusExecutionFeeWith20PercentGasMarginNative": "0.006113157166"
+    },
+    {
+      "chainId": 5318007,
+      "symbol": "lREACT",
+      "allEstimatesSucceeded": true,
+      "gasEstimate": "2024693",
+      "valueDepositsNative": "0.1",
+      "executionFeeAtObservedGasPriceNative": "0.2024693",
+      "valuePlusExecutionFeeWith20PercentGasMarginNative": "0.3429632"
+    }
+  ],
+  "publicTestnetExecution": false,
+  "limitations": [
+    "State overrides supply hypothetical sender balances and hypothetical dependency code only for simulation. Actual balances remain zero.",
+    "Predicted addresses assume one Base faucet transaction precedes deployment. They are not deployed addresses.",
+    "Estimated constructor and configuration execution gas only. Base L1 data fees, subsequent requests, callbacks, debt settlement, cancellation, retries, and finality confirmation are excluded.",
+    "Creation bytecode hashes allow a later workflow to detect changed constructor inputs or builds. Gas prices and chain state can change.",
+    "Post-deploy estimates use simulated runtime bytecode with empty storage; the measured methods do not depend on constructor storage beyond immutable fields. Real subscriptions are not created."
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-19T13:32:07.319Z",
+  "mode": "offline",
+  "status": "blocked",
+  "ready": false,
+  "scope": "Reactive Meets AI; Base Sepolia origin and destination, Lasna coordinator.",
+  "checks": [
+    {
+      "id": "local-verification",
+      "status": "pass",
+      "code": "CURRENT_LOCAL_TESTS_PASSED",
+      "testsPassed": 104
+    },
+    {
+      "id": "public-deployment",
+      "status": "fail",
+      "code": "PUBLIC_DEPLOYMENT_INCOMPLETE",
+      "action": "Fund the scoped Base Sepolia and Lasna wallet, then complete scripts/deploy-testnet.mjs."
+    },
+    {
+      "id": "model-public-loop",
+      "status": "pending",
+      "code": "MISSING_VERIFIABLE_PUBLIC_DEPLOYMENT",
+      "action": "Run scripts/live-agent.mjs --prepare, review its digest, then complete the approved public loop and preserve all six receipts."
+    },
+    {
+      "id": "public-source",
+      "status": "pending",
+      "code": "MISSING_PUBLIC_SOURCE",
+      "action": "Publish the current original source in a public GitHub repository. Record its immutable commit in evidence/submission-input.json, then rerun with --online."
+    },
+    {
+      "id": "submission-video",
+      "status": "fail",
+      "code": "FINAL_PUBLIC_PROOF_VIDEO_REQUIRED",
+      "action": "Record the completed public loop in a final video under 180 seconds. Set video.scope to submission, provide its local path and a direct public HTTPS file URL, then rerun with --online."
+    },
+    {
+      "id": "public-chain-receipts",
+      "status": "pending",
+      "code": "MISSING_VERIFIABLE_PUBLIC_LOOP",
+      "action": "Complete the model-linked public loop and rerun with --online. Local demos, preflights, historical flags, and deployment-only evidence cannot satisfy this gate."
+    }
+  ],
+  "pendingFacts": [
+    {
+      "id": "public-deployment",
+      "code": "PUBLIC_DEPLOYMENT_INCOMPLETE",
+      "action": "Fund the scoped Base Sepolia and Lasna wallet, then complete scripts/deploy-testnet.mjs."
+    },
+    {
+      "id": "model-public-loop",
+      "code": "MISSING_VERIFIABLE_PUBLIC_DEPLOYMENT",
+      "action": "Run scripts/live-agent.mjs --prepare, review its digest, then complete the approved public loop and preserve all six receipts."
+    },
+    {
+      "id": "public-source",
+      "code": "MISSING_PUBLIC_SOURCE",
+      "action": "Publish the current original source in a public GitHub repository. Record its immutable commit in evidence/submission-input.json, then rerun with --online."
+    },
+    {
+      "id": "submission-video",
+      "code": "FINAL_PUBLIC_PROOF_VIDEO_REQUIRED",
+      "action": "Record the completed public loop in a final video under 180 seconds. Set video.scope to submission, provide its local path and a direct public HTTPS file URL, then rerun with --online."
+    },
+    {
+      "id": "public-chain-receipts",
+      "code": "MISSING_VERIFIABLE_PUBLIC_LOOP",
+      "action": "Complete the model-linked public loop and rerun with --online. Local demos, preflights, historical flags, and deployment-only evidence cannot satisfy this gate."
+    }
+  ],
+  "limits": [
+    "Ready means the recorded materials passed these checks, not that a DoraHacks entry was submitted.",
+    "RPC-reported canonical receipts are trusted observations, not cryptographic finality proofs.",
+    "Model metadata and approval digests establish recorded source and operation binding, not cryptographic proof of inference or a human signature."
+  ]
+}

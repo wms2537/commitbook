@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-16T02:25:31.153Z",
+  "readOnly": true,
+  "ok": true,
+  "funding": {
+    "publicAddress": "0x4C4543217e66Ac3124d795785C63fa160B181C25",
+    "allSelectedNetworksHaveFunds": false,
+    "note": "A positive balance is not proof that the planned deployment is affordable."
+  },
+  "networks": [
+    {
+      "id": "lasna",
+      "name": "Reactive Lasna",
+      "expectedChainId": 5318007,
+      "symbol": "lREACT",
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "rpcOrigin": "https://lasna-rpc.rnk.dev",
+      "chainId": "5318007",
+      "service": {
+        "address": "0x8888888888888888888888888888888888888888",
+        "role": "system",
+        "byteLength": 239,
+        "sha256": "c345f97abac5c88b4dc0ee59ba61763839236e8eb049fca93c0aabe04e6c71ab",
+        "check": "nonempty-bytecode-only"
+      },
+      "latestBlock": {
+        "number": "8455475",
+        "hash": "0x8bec949ab40e7ab5badbe0bc711e799673f97e13de3e3873896d866a3fbd4782",
+        "timestamp": "2026-11-16T02:25:28.000Z",
+        "baseFeePerGasWei": "100000000000"
+      },
+      "finalizedBlock": {
+        "number": "8455474",
+        "hash": "0x0f1870af43625df06e0680c5158396e8f8ba0b78304c3104f83132c246c1c153",
+        "timestamp": "2026-11-16T02:25:27.000Z",
+        "baseFeePerGasWei": "100000000000"
+      },
+      "gasPriceWei": "100000000000",
+      "feeConfiguration": {
+        "coefficientPer1000": "1000",
+        "extraGas": "100000",
+        "maxChargeGas": "50000"
+      },
+      "signer": {
+        "address": "0x4C4543217e66Ac3124d795785C63fa160B181C25",
+        "balanceWei": "0",
+        "balanceNative": "0",
+        "hasFunds": false
+      },
+      "costReferences": {
+        "gasOnlyForOneMillionUnitsNative": "0.1",
+        "referenceGasPriceWei": "100000000000",
+        "note": "Reference arithmetic, not an estimateGas quote. Excludes L1 data fees and deployment-specific gas.",
+        "serviceFeeFor100000ExecutionGasNative": "0.02"
+      }
+    },
+    {
+      "id": "base-sepolia",
+      "name": "Base Sepolia",
+      "expectedChainId": 84532,
+      "symbol": "ETH",
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "rpcOrigin": "https://sepolia.base.org",
+      "chainId": "84532",
+      "service": {
+        "address": "0x476F44b11F5C942c58f4c8E3d0300E5710743585",
+        "role": "callback-proxy",
+        "byteLength": 218,
+        "sha256": "f5938b3271bd8a450c33e7f0a0930da35e0cb7a1b00183ebd81bf4a0438a13b3",
+        "check": "nonempty-bytecode-only"
+      },
+      "latestBlock": {
+        "number": "59370299",
+        "hash": "0x9c76bd5fae0e77bca6b7902c302bfdb69cceb28570aa45d3ea2389bab7c0d933",
+        "timestamp": "2026-11-16T02:25:28.000Z",
+        "baseFeePerGasWei": "5000523"
+      },
+      "finalizedBlock": {
+        "number": "59364720",
+        "hash": "0x978746f82a4d8ed19426a42549dbd10f5de3bc81ce7fac9113545cd842fcb63d",
+        "timestamp": "2026-11-16T02:06:52.000Z",
+        "baseFeePerGasWei": "5004365"
+      },
+      "gasPriceWei": "6000523",
+      "feeConfiguration": {
+        "coefficientPer1000": "1100",
+        "extraGas": "80000",
+        "maxChargeGas": "50000"
+      },
+      "lasnaFaucet": {
+        "address": "0x2afaFD298b23b62760711756088F75B7409f5967",
+        "byteLength": 1534,
+        "sha256": "b9da04a64b51c5007ddc79ef286c6a37ca21d7e8fc821ca0c962ea7e4bf4de6f",
+        "check": "nonempty-bytecode-only"
+      },
+      "signer": {
+        "address": "0x4C4543217e66Ac3124d795785C63fa160B181C25",
+        "balanceWei": "0",
+        "balanceNative": "0",
+        "hasFunds": false
+      },
+      "costReferences": {
+        "gasOnlyForOneMillionUnitsNative": "0.000006000523",
+        "referenceGasPriceWei": "6000523",
+        "note": "Reference arithmetic, not an estimateGas quote. Excludes L1 data fees and deployment-specific gas.",
+        "serviceFeeFor100000ExecutionGasNative": "0.000001188103554"
+      }
+    },
+    {
+      "id": "unichain-sepolia",
+      "name": "Unichain Sepolia",
+      "expectedChainId": 1301,
+      "symbol": "ETH",
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "rpcOrigin": "https://sepolia.unichain.org",
+      "chainId": "1301",
+      "service": {
+        "address": "0x775c9B990ADe401060B78D0e98684eEf8d2466C1",
+        "role": "callback-proxy",
+        "byteLength": 218,
+        "sha256": "f5938b3271bd8a450c33e7f0a0930da35e0cb7a1b00183ebd81bf4a0438a13b3",
+        "check": "nonempty-bytecode-only"
+      },
+      "latestBlock": {
+        "number": "67943501",
+        "hash": "0x3492a4dd23f7a7cdd91195327610d669fc1ccea194d43f28e05a2b25d7e9d64e",
+        "timestamp": "2026-11-16T02:25:29.000Z",
+        "baseFeePerGasWei": "500000"
+      },
+      "finalizedBlock": {
+        "number": "67942088",
+        "hash": "0xc3eab7b6ae608adae331a9bb11e3dae8b0857c9d1b8bfab13a2d7651dd25e0dd",
+        "timestamp": "2026-11-16T02:01:56.000Z",
+        "baseFeePerGasWei": "500000"
+      },
+      "gasPriceWei": "1500000",
+      "feeConfiguration": {
+        "coefficientPer1000": "1100",
+        "extraGas": "80000",
+        "maxChargeGas": "50000"
+      },
+      "signer": {
+        "address": "0x4C4543217e66Ac3124d795785C63fa160B181C25",
+        "balanceWei": "0",
+        "balanceNative": "0",
+        "hasFunds": false
+      },
+      "costReferences": {
+        "gasOnlyForOneMillionUnitsNative": "0.0000015",
+        "referenceGasPriceWei": "1500000",
+        "note": "Reference arithmetic, not an estimateGas quote. Excludes L1 data fees and deployment-specific gas.",
+        "serviceFeeFor100000ExecutionGasNative": "0.000000297"
+      }
+    }
+  ]
+}

@@ -1,0 +1,654 @@
+TAP version 13
+# Subtest: planner permits only authoritative catalog terms and no generated signing fields
+ok 1 - planner permits only authoritative catalog terms and no generated signing fields
+  ---
+  duration_ms: 2.351509
+  type: 'test'
+  ...
+# Subtest: policy rejects unavailable offers, excess amount, wrong service, privacy and deadline
+ok 2 - policy rejects unavailable offers, excess amount, wrong service, privacy and deadline
+  ---
+  duration_ms: 0.605124
+  type: 'test'
+  ...
+# Subtest: insufficient capacity blocks recommendation without changing authoritative policy
+ok 3 - insufficient capacity blocks recommendation without changing authoritative policy
+  ---
+  duration_ms: 0.936914
+  type: 'test'
+  ...
+# Subtest: replacement requires server-observed finalized closure and sufficient current budget
+ok 4 - replacement requires server-observed finalized closure and sufficient current budget
+  ---
+  duration_ms: 0.520666
+  type: 'test'
+  ...
+# Subtest: wait and escalation have no spending authority or offer attached
+ok 5 - wait and escalation have no spending authority or offer attached
+  ---
+  duration_ms: 0.324961
+  type: 'test'
+  ...
+# Subtest: malformed model content and context reject before authority is returned
+ok 6 - malformed model content and context reject before authority is returned
+  ---
+  duration_ms: 0.503861
+  type: 'test'
+  ...
+# Subtest: model prompt omits signing fields and identifies supplier prose as untrusted
+ok 7 - model prompt omits signing fields and identifies supplier prose as untrusted
+  ---
+  duration_ms: 0.553515
+  type: 'test'
+  ...
+# Subtest: provider adapter records inference only after a completed validated response
+ok 8 - provider adapter records inference only after a completed validated response
+  ---
+  duration_ms: 7.358889
+  type: 'test'
+  ...
+# Subtest: provider errors, truncation and invalid output never silently fall back to a scripted plan
+ok 9 - provider errors, truncation and invalid output never silently fall back to a scripted plan
+  ---
+  duration_ms: 1.429508
+  type: 'test'
+  ...
+# Subtest: semantic parser cannot insert an offer, amount or privileged action
+ok 10 - semantic parser cannot insert an offer, amount or privileged action
+  ---
+  duration_ms: 0.448417
+  type: 'test'
+  ...
+# Subtest: deterministic ranking computes price and deadline from interpreted units
+ok 11 - deterministic ranking computes price and deadline from interpreted units
+  ---
+  duration_ms: 0.868931
+  type: 'test'
+  ...
+# Subtest: compact durations constrain purchasing even when the structured owner ceiling is looser
+ok 12 - compact durations constrain purchasing even when the structured owner ceiling is looser
+  ---
+  duration_ms: 0.57644
+  type: 'test'
+  ...
+# Subtest: unparsed timing requirements cannot be relaxed by a structured owner ceiling
+ok 13 - unparsed timing requirements cannot be relaxed by a structured owner ceiling
+  ---
+  duration_ms: 0.293013
+  type: 'test'
+  ...
+# Subtest: semantic preferences can restrict but cannot expand owner authorization
+ok 14 - semantic preferences can restrict but cannot expand owner authorization
+  ---
+  duration_ms: 0.227673
+  type: 'test'
+  ...
+# Subtest: temporary supplier pauses use deterministic duration arithmetic
+ok 15 - temporary supplier pauses use deterministic duration arithmetic
+  ---
+  duration_ms: 0.422477
+  type: 'test'
+  ...
+# Subtest: nonlocal plaintext model endpoints are rejected and credentials stay in headers
+ok 16 - nonlocal plaintext model endpoints are rejected and credentials stay in headers
+  ---
+  duration_ms: 0.71585
+  type: 'test'
+  ...
+# This version of µWS is not compatible with your Node.js build:
+# Error: Cannot find module '../binaries/uws_linux_x64_137.node'
+# Require stack:
+# - /workspace/scratch/a164461adc99/commitbook/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+# - /workspace/scratch/a164461adc99/commitbook/node_modules/ganache/dist/node/core.js
+# Falling back to a NodeJS implementation; performance may be degraded.
+# Subtest: two chains share one cap; cancellation before grant prevents resurrection and permits safe reallocation
+ok 17 - two chains share one cap; cancellation before grant prevents resurrection and permits safe reallocation
+  ---
+  duration_ms: 5168.358158
+  type: 'test'
+  ...
+# Subtest: duplicate grants, executions and spend receipts have one business effect
+ok 18 - duplicate grants, executions and spend receipts have one business effect
+  ---
+  duration_ms: 1872.803635
+  type: 'test'
+  ...
+# Subtest: missing closure acknowledgement keeps the reservation locked despite remote cancellation
+ok 19 - missing closure acknowledgement keeps the reservation locked despite remote cancellation
+  ---
+  duration_ms: 892.338336
+  type: 'test'
+  ...
+# Subtest: source and destination authenticate their callers; a forged reactive identity cannot activate a permit
+ok 20 - source and destination authenticate their callers; a forged reactive identity cannot activate a permit
+  ---
+  duration_ms: 1044.557996
+  type: 'test'
+  ...
+# Subtest: wrong source chain, emitter and malformed event layout cannot settle a commitment
+ok 21 - wrong source chain, emitter and malformed event layout cannot settle a commitment
+  ---
+  duration_ms: 1262.561747
+  type: 'test'
+  ...
+# Subtest: a spent closure may precede the spend receipt without a refund or double count
+ok 22 - a spent closure may precede the spend receipt without a refund or double count
+  ---
+  duration_ms: 1657.942846
+  type: 'test'
+  ...
+# Subtest: closed unused authorization cannot become spent from a contradictory later receipt
+ok 23 - closed unused authorization cannot become spent from a contradictory later receipt
+  ---
+  duration_ms: 1012.099734
+  type: 'test'
+  ...
+# Subtest: failed token transfer rolls back consumption and immutable grant fields cannot be changed
+ok 24 - failed token transfer rolls back consumption and immutable grant fields cannot be changed
+  ---
+  duration_ms: 1265.94193
+  type: 'test'
+  ...
+# Subtest: expired authorization cannot pay and time passing does not replenish the shared budget
+ok 25 - expired authorization cannot pay and time passing does not replenish the shared budget
+  ---
+  duration_ms: 851.87746
+  type: 'test'
+  ...
+# Subtest: cancellation observed before its original request cannot later create spending authority
+ok 26 - cancellation observed before its original request cannot later create spending authority
+  ---
+  duration_ms: 711.46569
+  type: 'test'
+  ...
+# Subtest: canonical finalized closure validates both zero consumption and full consumption
+ok 27 - canonical finalized closure validates both zero consumption and full consumption
+  ---
+  duration_ms: 13.234038
+  type: 'test'
+  ...
+# Subtest: closed-before-grant tombstone is valid when finalized consumed amount is zero
+ok 28 - closed-before-grant tombstone is valid when finalized consumed amount is zero
+  ---
+  duration_ms: 2.442918
+  type: 'test'
+  ...
+# Subtest: a disappeared receipt cannot release a reservation
+ok 29 - a disappeared receipt cannot release a reservation
+  ---
+  duration_ms: 2.008942
+  type: 'test'
+  ...
+# Subtest: a reverted source transaction cannot establish closure
+ok 30 - a reverted source transaction cannot establish closure
+  ---
+  duration_ms: 1.550892
+  type: 'test'
+  ...
+# Subtest: receipt substitution and a receipt relocated by reorg are rejected
+ok 31 - receipt substitution and a receipt relocated by reorg are rejected
+  ---
+  duration_ms: 4.49219
+  type: 'test'
+  ...
+# Subtest: a once observed block that is no longer canonical is rejected
+ok 32 - a once observed block that is no longer canonical is rejected
+  ---
+  duration_ms: 1.244278
+  type: 'test'
+  ...
+# Subtest: finality must cover the closure block, regardless of other confirmation counts
+ok 33 - finality must cover the closure block, regardless of other confirmation counts
+  ---
+  duration_ms: 1.155204
+  type: 'test'
+  ...
+# Subtest: an absent finalized tag and a changing finalized checkpoint both reject
+ok 34 - an absent finalized tag and a changing finalized checkpoint both reject
+  ---
+  duration_ms: 2.200011
+  type: 'test'
+  ...
+# Subtest: the exact event at the observed global log index is required
+ok 35 - the exact event at the observed global log index is required
+  ---
+  duration_ms: 4.425821
+  type: 'test'
+  ...
+# Subtest: an altered consumed outcome, malformed event, or removed log cannot verify
+ok 36 - an altered consumed outcome, malformed event, or removed log cannot verify
+  ---
+  duration_ms: 3.081402
+  type: 'test'
+  ...
+# Subtest: the permit must be permanently CLOSED at the finalized checkpoint
+ok 37 - the permit must be permanently CLOSED at the finalized checkpoint
+  ---
+  duration_ms: 6.070763
+  type: 'test'
+  ...
+# Subtest: receipt and closed permit cannot substitute for the coordinator-bound evidence digest
+ok 38 - receipt and closed permit cannot substitute for the coordinator-bound evidence digest
+  ---
+  duration_ms: 0.90098
+  type: 'test'
+  ...
+# Subtest: source chain identity and configured route are part of the check
+ok 39 - source chain identity and configured route are part of the check
+  ---
+  duration_ms: 1.367585
+  type: 'test'
+  ...
+# Subtest: a changed pending proof is rejected before signing; an already finalized closure is a no-op
+ok 40 - a changed pending proof is rejected before signing; an already finalized closure is a no-op
+  ---
+  duration_ms: 1.488047
+  type: 'test'
+  ...
+# Subtest: the read-only workflow pins permit state to an exact finalized canonical block hash
+ok 41 - the read-only workflow pins permit state to an exact finalized canonical block hash
+  ---
+  duration_ms: 6.65709
+  type: 'test'
+  ...
+# Subtest: unavailable source RPC and unsupported finalized tags fail without fallback
+ok 42 - unavailable source RPC and unsupported finalized tags fail without fallback
+  ---
+  duration_ms: 4.924974
+  type: 'test'
+  ...
+# Subtest: a node without block-hash state reads is rejected without numeric or latest fallback
+ok 43 - a node without block-hash state reads is rejected without numeric or latest fallback
+  ---
+  duration_ms: 2.34499
+  type: 'test'
+  ...
+# Subtest: an already finalized commitment returns before source reads or signer access
+ok 44 - an already finalized commitment returns before source reads or signer access
+  ---
+  duration_ms: 1.674618
+  type: 'test'
+  ...
+# Subtest: provider failures cannot expose RPC credentials or signed payloads through errors
+ok 45 - provider failures cannot expose RPC credentials or signed payloads through errors
+  ---
+  duration_ms: 0.197989
+  type: 'test'
+  ...
+# Subtest: finalizer refuses an outstanding signer transaction instead of spending gas on a duplicate
+ok 46 - finalizer refuses an outstanding signer transaction instead of spending gas on a duplicate
+  ---
+  duration_ms: 0.426394
+  type: 'test'
+  ...
+# Subtest: confirmed transaction resumes at zero balance without signing or rebroadcast
+ok 47 - confirmed transaction resumes at zero balance without signing or rebroadcast
+  ---
+  duration_ms: 81.851133
+  type: 'test'
+  ...
+# Subtest: prepared transaction recovers the same saved signed bytes and hash
+ok 48 - prepared transaction recovers the same saved signed bytes and hash
+  ---
+  duration_ms: 13.843497
+  type: 'test'
+  ...
+# Subtest: an already pending transaction is recovered without another broadcast
+ok 49 - an already pending transaction is recovered without another broadcast
+  ---
+  duration_ms: 21.658334
+  type: 'test'
+  ...
+# Subtest: wrong RPC chain blocks before signing or broadcasting
+ok 50 - wrong RPC chain blocks before signing or broadcasting
+  ---
+  duration_ms: 6.157044
+  type: 'test'
+  ...
+# Subtest: new transaction rejects zero funds and insufficient maximum gas cost before signing
+ok 51 - new transaction rejects zero funds and insufficient maximum gas cost before signing
+  ---
+  duration_ms: 5.970814
+  type: 'test'
+  ...
+# Subtest: changed transaction intent cannot reuse a saved journal entry
+ok 52 - changed transaction intent cannot reuse a saved journal entry
+  ---
+  duration_ms: 14.253621
+  type: 'test'
+  ...
+# Subtest: exclusive workflow lock blocks concurrent writers and release is idempotent
+ok 53 - exclusive workflow lock blocks concurrent writers and release is idempotent
+  ---
+  duration_ms: 6.931784
+  type: 'test'
+  ...
+# Subtest: funding planning remains an honest report and faucet requires explicit bounded broadcast
+ok 54 - funding planning remains an honest report and faucet requires explicit bounded broadcast
+  ---
+  duration_ms: 1.253452
+  type: 'test'
+  ...
+# Subtest: accounting reads one block and rejects a changed canonical hash
+ok 55 - accounting reads one block and rejects a changed canonical hash
+  ---
+  duration_ms: 0.450861
+  type: 'test'
+  ...
+# Subtest: public model proposal binds the approved offer to concrete inbox parameters
+ok 56 - public model proposal binds the approved offer to concrete inbox parameters
+  ---
+  duration_ms: 15.971309
+  type: 'test'
+  ...
+# Subtest: broadcast requires the exact reviewed digest and CLI separates planning from execution
+ok 57 - broadcast requires the exact reviewed digest and CLI separates planning from execution
+  ---
+  duration_ms: 3.221603
+  type: 'test'
+  ...
+# Subtest: changed proposals, catalogs, arbitrary recipient or calldata cannot gain authority through a new digest
+ok 58 - changed proposals, catalogs, arbitrary recipient or calldata cannot gain authority through a new digest
+  ---
+  duration_ms: 5.277797
+  type: 'test'
+  ...
+# Subtest: new requests reject stale source, expired plans and another signer
+ok 59 - new requests reject stale source, expired plans and another signer
+  ---
+  duration_ms: 2.331189
+  type: 'test'
+  ...
+# Subtest: fresh public accounting must agree with the capacity reviewed for this demo
+ok 60 - fresh public accounting must agree with the capacity reviewed for this demo
+  ---
+  duration_ms: 1.657742
+  type: 'test'
+  ...
+# Subtest: a resumed operation preserves the same plan, payment terms, expiry and operation ID
+ok 61 - a resumed operation preserves the same plan, payment terms, expiry and operation ID
+  ---
+  duration_ms: 4.853035
+  type: 'test'
+  ...
+# Subtest: unsupported neural interpretation remains reviewable and cannot be approved for spending
+ok 62 - unsupported neural interpretation remains reviewable and cannot be approved for spending
+  ---
+  duration_ms: 3.297077
+  type: 'test'
+  ...
+# Subtest: inference metadata and the exact prompt remain bound to the approved proposal
+ok 63 - inference metadata and the exact prompt remain bound to the approved proposal
+  ---
+  duration_ms: 5.259189
+  type: 'test'
+  ...
+# Subtest: a plan replaced before broadcast acquires the lock cannot start an unresumable operation
+ok 64 - a plan replaced before broadcast acquires the lock cannot start an unresumable operation
+  ---
+  duration_ms: 9.381121
+  type: 'test'
+  ...
+# This version of µWS is not compatible with your Node.js build:
+# Error: Cannot find module '../binaries/uws_linux_x64_137.node'
+# Require stack:
+# - /workspace/scratch/a164461adc99/commitbook/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+# - /workspace/scratch/a164461adc99/commitbook/node_modules/ganache/dist/node/core.js
+# Falling back to a NodeJS implementation; performance may be degraded.
+# Subtest: authorized cancellation retry republishes a missed closure without reopening or releasing twice
+ok 65 - authorized cancellation retry republishes a missed closure without reopening or releasing twice
+  ---
+  duration_ms: 3719.649728
+  type: 'test'
+  ...
+# Subtest: authorized grant retry republishes a missed payment receipt and never pays twice
+ok 66 - authorized grant retry republishes a missed payment receipt and never pays twice
+  ---
+  duration_ms: 1699.994391
+  type: 'test'
+  ...
+# This version of µWS is not compatible with your Node.js build:
+# Error: Cannot find module '../binaries/uws_linux_x64_137.node'
+# Require stack:
+# - /workspace/scratch/a164461adc99/commitbook/node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/src/uws.js
+# - /workspace/scratch/a164461adc99/commitbook/node_modules/ganache/dist/node/core.js
+# Falling back to a NodeJS implementation; performance may be degraded.
+# Subtest: agent plan pays once on actual EVMs and repeated execution preserves the same operation
+ok 67 - agent plan pays once on actual EVMs and repeated execution preserves the same operation
+  ---
+  duration_ms: 4529.376098
+  type: 'test'
+  ...
+# Subtest: replacement waits for observed closure and explicit finalization; delayed grant remains closed
+ok 68 - replacement waits for observed closure and explicit finalization; delayed grant remains closed
+  ---
+  duration_ms: 4333.201583
+  type: 'test'
+  ...
+# Subtest: a dropped spend receipt is recovered by authorized retry without another payment
+ok 69 - a dropped spend receipt is recovered by authorized retry without another payment
+  ---
+  duration_ms: 2097.191541
+  type: 'test'
+  ...
+# Subtest: reset invalidates old session IDs and an in-flight planner excludes concurrent mutations
+ok 70 - reset invalidates old session IDs and an in-flight planner excludes concurrent mutations
+  ---
+  duration_ms: 1704.640647
+  type: 'test'
+  ...
+# Subtest: closing a paid permit with a missing receipt reconciles spending without releasing it as unused
+ok 71 - closing a paid permit with a missing receipt reconciles spending without releasing it as unused
+  ---
+  duration_ms: 2514.300395
+  type: 'test'
+  ...
+# Subtest: model-invented payment terms and client budget overrides are rejected before any transaction
+ok 72 - model-invented payment terms and client budget overrides are rejected before any transaction
+  ---
+  duration_ms: 787.952188
+  type: 'test'
+  ...
+# Subtest: a temporary wait requires explicit owner readiness before retrying only the existing operation
+ok 73 - a temporary wait requires explicit owner readiness before retrying only the existing operation
+  ---
+  duration_ms: 2147.246418
+  type: 'test'
+  ...
+# Subtest: an uncertain clarification supersedes older replacement proposals and cannot authorize retry payment
+ok 74 - an uncertain clarification supersedes older replacement proposals and cannot authorize retry payment
+  ---
+  duration_ms: 2436.531757
+  type: 'test'
+  ...
+# Subtest: HTTP mutation reaches the runtime only with the current session and returns actual state
+ok 75 - HTTP mutation reaches the runtime only with the current session and returns actual state
+  ---
+  duration_ms: 39.360119
+  type: 'test'
+  ...
+# Subtest: foreign Origin, rebinding Host, and cross-site mutations cannot reach runtime
+ok 76 - foreign Origin, rebinding Host, and cross-site mutations cannot reach runtime
+  ---
+  duration_ms: 12.433123
+  type: 'test'
+  ...
+# Subtest: HTTP input boundary rejects non-JSON, malformed JSON, arrays, and oversized bodies
+ok 77 - HTTP input boundary rejects non-JSON, malformed JSON, arrays, and oversized bodies
+  ---
+  duration_ms: 13.614515
+  type: 'test'
+  ...
+# Subtest: static allowlist prevents source or wallet downloads and applies browser security headers
+ok 78 - static allowlist prevents source or wallet downloads and applies browser security headers
+  ---
+  duration_ms: 10.870535
+  type: 'test'
+  ...
+# Subtest: the scenario blocks overlapping mutations while state remains readable
+ok 79 - the scenario blocks overlapping mutations while state remains readable
+  ---
+  duration_ms: 7.423753
+  type: 'test'
+  ...
+# Subtest: evidence export keeps local execution explicit and coded provider failures do not expose secrets
+ok 80 - evidence export keeps local execution explicit and coded provider failures do not expose secrets
+  ---
+  duration_ms: 6.279547
+  type: 'test'
+  ...
+# Subtest: shutdown stops the planner and waits for active mutation cleanup before closing the runtime
+ok 81 - shutdown stops the planner and waits for active mutation cleanup before closing the runtime
+  ---
+  duration_ms: 119.031817
+  type: 'test'
+  ...
+# Subtest: missing public materials remain actionable and never inherit local success flags
+ok 82 - missing public materials remain actionable and never inherit local success flags
+  ---
+  duration_ms: 2398.239603
+  type: 'test'
+  ...
+# Subtest: complete offline fixtures still require online verification
+ok 83 - complete offline fixtures still require online verification
+  ---
+  duration_ms: 27.215922
+  type: 'test'
+  ...
+# Subtest: a full explicitly mocked public fixture passes every real validation path
+ok 84 - a full explicitly mocked public fixture passes every real validation path
+  ---
+  duration_ms: 56.242787
+  type: 'test'
+  ...
+# Subtest: zero hashes, a missing callback, mismatched approval, and local evidence cannot pass the public loop gate
+    # Subtest: zero public transaction hash
+    ok 1 - zero public transaction hash
+      ---
+      duration_ms: 15.251978
+      type: 'test'
+      ...
+    # Subtest: missing destination callback
+    ok 2 - missing destination callback
+      ---
+      duration_ms: 17.135925
+      type: 'test'
+      ...
+    # Subtest: mismatched approval digest
+    ok 3 - mismatched approval digest
+      ---
+      duration_ms: 15.317275
+      type: 'test'
+      ...
+    # Subtest: local receipt mode relabeled with success flags
+    ok 4 - local receipt mode relabeled with success flags
+      ---
+      duration_ms: 12.167732
+      type: 'test'
+      ...
+    # Subtest: local-only model plan
+    ok 5 - local-only model plan
+      ---
+      duration_ms: 13.369827
+      type: 'test'
+      ...
+    # Subtest: different request amount
+    ok 6 - different request amount
+      ---
+      duration_ms: 13.820107
+      type: 'test'
+      ...
+    # Subtest: reused success receipt
+    ok 7 - reused success receipt
+      ---
+      duration_ms: 11.577172
+      type: 'test'
+      ...
+    1..7
+ok 85 - zero hashes, a missing callback, mismatched approval, and local evidence cannot pass the public loop gate
+  ---
+  duration_ms: 100.075921
+  type: 'test'
+  ...
+# Subtest: plausible nonzero receipt hashes and success flags fail when RPC has no transaction
+ok 86 - plausible nonzero receipt hashes and success flags fail when RPC has no transaction
+  ---
+  duration_ms: 26.355213
+  type: 'test'
+  ...
+# Subtest: canonical receipts still require authentic callback events, compiled deployments, and a zero-payment replay
+    # Subtest: callback event is absent
+    ok 1 - callback event is absent
+      ---
+      duration_ms: 26.363075
+      type: 'test'
+      ...
+    # Subtest: deployment calldata belongs to different code
+    ok 2 - deployment calldata belongs to different code
+      ---
+      duration_ms: 33.0353
+      type: 'test'
+      ...
+    # Subtest: replay secretly pays again
+    ok 3 - replay secretly pays again
+      ---
+      duration_ms: 31.594008
+      type: 'test'
+      ...
+    # Subtest: public block has reorganized
+    ok 4 - public block has reorganized
+      ---
+      duration_ms: 13.413142
+      type: 'test'
+      ...
+    1..4
+ok 87 - canonical receipts still require authentic callback events, compiled deployments, and a zero-payment replay
+  ---
+  duration_ms: 105.302168
+  type: 'test'
+  ...
+# Subtest: public repository HTTP success is insufficient without exact immutable source contents
+ok 88 - public repository HTTP success is insufficient without exact immutable source contents
+  ---
+  duration_ms: 12.118028
+  type: 'test'
+  ...
+# Subtest: local-preview video and stale source verification block an otherwise complete fixture
+ok 89 - local-preview video and stale source verification block an otherwise complete fixture
+  ---
+  duration_ms: 30.554982
+  type: 'test'
+  ...
+# Subtest: video duration comes from a local probe with literal arguments and excludes 180 seconds and audio-only files
+ok 90 - video duration comes from a local probe with literal arguments and excludes 180 seconds and audio-only files
+  ---
+  duration_ms: 1.070696
+  type: 'test'
+  ...
+# Subtest: public video must be directly downloadable, byte-identical, and anonymous
+ok 91 - public video must be directly downloadable, byte-identical, and anonymous
+  ---
+  duration_ms: 0.680948
+  type: 'test'
+  ...
+# Subtest: CLI has no broadcast, approval, wallet, or mock-evidence mode
+ok 92 - CLI has no broadcast, approval, wallet, or mock-evidence mode
+  ---
+  duration_ms: 0.286071
+  type: 'test'
+  ...
+# Subtest: online source compilation rejects a changed or dirty SDK despite a matching original-source hash
+ok 93 - online source compilation rejects a changed or dirty SDK despite a matching original-source hash
+  ---
+  duration_ms: 0.929904
+  type: 'test'
+  ...
+1..93
+# tests 104
+# suites 0
+# pass 104
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 53076.078242

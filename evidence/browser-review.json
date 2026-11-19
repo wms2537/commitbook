@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-16",
+  "method": "Observed browser interaction through the managed preview",
+  "verifiedSourceSha256": "70c5ac9f1441ae0314bf8a4804cd4bb9fff9f035f24cb362ece612138af6c84a",
+  "localRuntime": {
+    "scenarioTriggeredThroughUI": true,
+    "observedCompletionMessage": "Recovery demonstration completed. Inspect the commitments and execution trail.",
+    "observedModelPlans": 4,
+    "finalBudget": {"cap":100,"spent":55,"reserved":0,"available":45},
+    "applicationConsoleErrorsObserved": 0,
+    "browserExtensionMetadataErrorsObserved": true
+  },
+  "recordedReview": {
+    "checkpoints":15,
+    "lastCheckpoint":"Repeat the request without another payment",
+    "planningDisabled":true,
+    "evidenceDownloadInspected":true,
+    "exportedInferenceCalls":4,
+    "exportedBudget":{"cap":100,"spent":55,"reserved":0,"available":45},
+    "publicTestnetExecution":false
+  },
+  "narrowLayout": {
+    "method":"Actual app rendered inside a temporary same-origin iframe",
+    "viewportWidthCssPixels":390,
+    "viewportHeightCssPixels":844,
+    "documentClientWidth":375,
+    "documentScrollWidth":375,
+    "horizontalOverflow":false,
+    "lastCheckpointSelected":true,
+    "fiveReceiptTableExpandedAndInspected":true,
+    "physicalMobileDeviceTest":false
+  }
+}
