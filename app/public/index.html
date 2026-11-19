@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172c34">
+  <meta name="description" content="Review bounded agent purchase proposals and follow each commitment through reservation, payment, cancellation, and recovery.">
+  <title>CommitBook · Procurement console</title>
+  <link rel="stylesheet" href="./app.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to procurement console</a>
+  <header class="site-header">
+    <a class="brand" href="#main" aria-label="CommitBook home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>CommitBook<span class="brand-caption">Agent procurement</span></span>
+    </a>
+    <nav aria-label="Console sections">
+      <a href="#planning">Plan</a><a href="#commitments">Commitments</a><a href="#trail">Evidence</a>
+    </nav>
+    <div class="environment"><span class="status-dot" aria-hidden="true"></span><span id="environment-label">Connecting</span></div>
+  </header>
+
+  <main id="main" class="page-shell">
+    <section class="page-heading" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">PROCUREMENT CONSOLE <span class="eyebrow-divider">/</span> <span id="session-label">NEW SESSION</span></p>
+        <h1 id="page-title">A shared budget.<br><span>Every commitment visible.</span></h1>
+        <p class="page-description">Give an agent an objective. Review its proposal. Follow the spending authority until the purchase settles or closes.</p>
+      </div>
+      <div class="heading-actions">
+        <button class="button button-primary" id="scenario-button" type="button" disabled><span class="play-icon" aria-hidden="true"></span>Start recovery demo</button>
+        <p class="action-note" id="scenario-note">Uses a fresh local ledger.</p>
+        <button class="button button-text" id="export-button" type="button" disabled><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2v10m-4-4 4 4 4-4M3 13v4h14v-4"/></svg>Download evidence</button>
+        <a class="button button-text" id="source-link" hidden>Get source</a>
+      </div>
+    </section>
+
+    <div id="connection-panel" class="connection-panel" role="status"><span class="spinner" aria-hidden="true"></span><span>Connecting to the local runtime...</span><button id="reconnect-button" class="button button-small button-secondary" type="button" hidden>Try again</button></div>
+    <div id="notice" class="notice" role="alert" hidden><span id="notice-text"></span><button id="notice-close" type="button" aria-label="Dismiss notification">×</button></div>
+
+    <section id="review-panel" class="review-panel" aria-labelledby="review-title" hidden>
+      <div class="review-intro"><p class="eyebrow">RECORDED EVIDENCE</p><h2 id="review-title">Inspect the run, step by step.</h2><p id="review-summary">This is a recorded local run. Playback does not send transactions or run the model.</p></div>
+      <div class="replay-controls">
+        <div class="replay-buttons"><button class="icon-button" id="replay-previous" type="button" aria-label="Previous checkpoint">←</button><button class="button button-primary" id="replay-play" type="button">Play recorded run</button><button class="icon-button" id="replay-next" type="button" aria-label="Next checkpoint">→</button><span id="replay-count" class="mono">1 / 1</span></div>
+        <label class="visually-hidden" for="replay-position">Recorded checkpoint</label><input id="replay-position" type="range" min="0" max="0" value="0">
+        <p id="replay-label" class="replay-label">Recorded checkpoint</p>
+      </div>
+    </section>
+
+    <div class="workspace-grid">
+      <section id="planning" class="panel planning-panel" aria-labelledby="planning-title">
+        <div class="section-heading"><div><p class="eyebrow">01 / DEFINE THE WORK</p><h2 id="planning-title">What needs to get done?</h2></div><span class="step-mark" aria-hidden="true">01</span></div>
+        <form id="plan-form">
+          <label for="goal">Purchase goal</label>
+          <textarea id="goal" name="goal" rows="4" maxlength="2400" required>Extract this invoice batch privately within two minutes. If a supplier cannot accept it, find an approved replacement.</textarea>
+          <div class="policy-fields">
+            <div><label for="required-service">Service</label><select id="required-service" name="requiredService"><option value="invoice-extraction">Invoice extraction</option><option value="invoice-verification">Invoice verification</option></select></div>
+            <div><label for="deadline">Supplier ETA limit <span class="muted">seconds</span></label><input id="deadline" name="maxEtaSeconds" type="number" min="1" max="120" step="1" value="120" required></div>
+          </div>
+          <label class="checkbox-label" for="require-private"><input id="require-private" type="checkbox" checked disabled><span>Private processing required</span><span class="field-note">Owner policy</span></label>
+          <div class="form-footer"><button id="plan-button" class="button button-primary" type="submit" disabled>Ask agent to plan<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5"/></svg></button><a class="text-link" href="#offers">View approved offers <span aria-hidden="true">↗</span></a></div>
+          <p id="planning-hint" class="form-hint">The model interprets your request. Code selects approved terms. Review the proposal before execution.</p>
+        </form>
+        <div id="recorded-plan-note" class="recorded-note" hidden>Planning controls are read-only in this recorded review. Use the checkpoint player to inspect the decisions from the captured run.</div>
+      </section>
+
+      <aside class="budget-column" aria-label="Budget and model status">
+        <section class="budget-card" aria-labelledby="budget-title">
+          <div class="budget-heading"><p class="eyebrow" id="budget-title">SPENDING AUTHORITY</p><span class="budget-cap">Cap <strong id="cap-value">...</strong></span></div>
+          <div class="available-label"><span class="status-dot" aria-hidden="true"></span>Available to commit</div>
+          <div class="available-number"><span id="available-value">...</span><span>units</span></div>
+          <div id="budget-track" class="budget-track" role="img" aria-label="Budget is loading"><span id="spent-segment" class="spent-segment"></span><span id="reserved-segment" class="reserved-segment"></span><span id="available-segment" class="available-segment"></span></div>
+          <div class="budget-breakdown"><div><span><i class="legend-dot reserved-dot"></i>Reserved</span><strong id="reserved-value">...</strong><small>Held until resolved</small></div><div><span><i class="legend-dot spent-dot"></i>Spent</span><strong id="spent-value">...</strong><small>Settled payments</small></div></div>
+          <div class="budget-invariant"><span class="check-symbol" aria-hidden="true">✓</span><span id="invariant-label">spent + reserved ≤ cap</span><span id="invariant-status">Checking</span></div>
+          <p class="budget-footnote">Authorization over prefunded test vaults.<br>This is not a wallet balance.</p>
+        </section>
+        <section class="model-card" aria-labelledby="model-title"><div class="model-icon" aria-hidden="true"><span></span><span></span><span></span><span></span></div><div class="model-info"><h3 id="model-title">Agent runtime</h3><p id="model-name">Checking model availability</p><span id="model-status" class="model-status">Connecting</span></div></section>
+      </aside>
+    </div>
+
+    <section id="decisions" class="decisions-section" aria-labelledby="decisions-title">
+      <div class="section-heading"><div><p class="eyebrow">02 / REVIEW THE PROPOSAL</p><h2 id="decisions-title">Agent decisions <span id="plan-count" class="count-pill">0</span></h2></div><label class="fault-control" for="fault-mode"><span>Execution mode</span><select id="fault-mode"><option value="none">Normal delivery</option><option value="delay-grant">Delay the grant</option><option value="drop-spend-receipt">Drop the spend receipt</option></select></label></div>
+      <div id="plans-list" class="plans-list"><div class="empty-state"><span class="empty-glyph" aria-hidden="true">⌘</span><div><h3>A proposal starts with your goal.</h3><p>The agent's selected offer and explanation will appear here. No purchase happens during planning.</p></div></div></div>
+    </section>
+
+    <section id="commitments" class="commitments-section" aria-labelledby="commitments-title">
+      <div class="section-heading"><div><p class="eyebrow">03 / FOLLOW THE COMMITMENT</p><h2 id="commitments-title">Commitments <span id="operation-count" class="count-pill">0</span></h2></div><span class="section-note">Every request keeps its own operation ID</span></div>
+      <div id="operations-list" class="operations-list"><div class="empty-state"><span class="empty-glyph" aria-hidden="true">▤</span><div><h3>No spending authority committed.</h3><p>Execute an approved proposal to create a commitment. Reservations and payments appear here.</p></div></div></div>
+    </section>
+
+    <div class="evidence-grid">
+      <section id="trail" class="panel trail-panel" aria-labelledby="trail-title"><div class="section-heading"><div><p class="eyebrow">THE RECORD</p><h2 id="trail-title">Execution trail</h2></div><span id="event-count" class="count-pill">0</span></div><p class="section-description">Model decisions and contract receipts in the order observed.</p><ol id="events-list" class="timeline"><li class="timeline-empty">Waiting for the first event.</li></ol></section>
+      <section id="offers" class="panel offers-panel" aria-labelledby="offers-title"><div class="section-heading"><div><p class="eyebrow">APPROVED CATALOG</p><h2 id="offers-title">Available suppliers</h2></div><span id="offer-count" class="count-pill">0</span></div><p class="section-description">The agent selects an offer ID. These terms supply the amount and destination.</p><div id="offers-list" class="offers-list"><p class="muted">Loading approved offers...</p></div></section>
+    </div>
+
+    <section id="evaluation-panel" class="panel evaluation-panel" aria-labelledby="evaluation-title" hidden><div class="section-heading"><div><p class="eyebrow">MODEL EVALUATION</p><h2 id="evaluation-title">What the evaluation observed</h2></div><span class="small-tag">Recorded results</span></div><div id="evaluation-content"></div></section>
+
+    <footer class="page-footer"><div><span class="footer-brand">CommitBook</span><p id="evidence-boundary">Actual Solidity execution. Simulated local transport. Public testnet deployment is pending funding.</p></div><button class="button button-text" id="reset-button" type="button" disabled>Reset local ledger</button></footer>
+  </main>
+  <div id="activity-bar" class="activity-bar" role="status" aria-live="polite" hidden><span class="spinner" aria-hidden="true"></span><span id="activity-text">Working...</span><span>State continues to update below.</span></div>
+</body>
+</html>
