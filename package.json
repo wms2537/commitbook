@@ -1,0 +1,36 @@
+{
+  "name": "commitbook",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Recoverable cross-chain spending commitments for AI agents",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "node app/server.mjs",
+    "start": "node app/server.mjs",
+    "setup": "node scripts/setup.mjs",
+    "model:setup": "python3 scripts/setup-model.py",
+    "model:serve": "python3 scripts/serve-model.py",
+    "evaluate:agent": "node scripts/evaluate-agent.mjs",
+    "demo:agent": "node scripts/demo-agent.mjs",
+    "build:review": "node scripts/build-review.mjs",
+    "compile": "node scripts/compile.mjs",
+    "test": "node --test --test-concurrency=1 test/*.test.mjs",
+    "demo": "node scripts/demo.mjs",
+    "verify": "node scripts/verify.mjs",
+    "preflight": "node scripts/check-testnets.mjs",
+    "wallet:new": "node scripts/create-testnet-wallet.mjs",
+    "deploy:testnet": "node scripts/deploy-testnet.mjs",
+    "demo:testnet": "node scripts/live-loop.mjs",
+    "agent:testnet": "node scripts/live-agent.mjs",
+    "submission:check": "node scripts/check-submission.mjs",
+    "verify:closure": "node scripts/verify-closure.mjs"
+  },
+  "devDependencies": {
+    "ethers": "6.17.0",
+    "ganache": "7.9.2",
+    "solc": "0.8.29"
+  }
+}
