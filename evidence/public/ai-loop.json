@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "mode": "public-testnet",
+  "owner": "0xDAa91d97309f4D8Dff8Cd3Eb73c680BC01626Dfe",
+  "contracts": {
+    "inbox": "0xb31C9c6149116D7E56Ca32833d337890fd903c82",
+    "coordinator": "0x12950907D33C85979C988a200F161CeD56150FEf",
+    "token": "0xEf74Da6aB2f6Fae2601F08bb75565940B1D02688",
+    "vault": "0xe09f5FF8fce8Cb176AEb0d7fB0aDf493Af78A579"
+  },
+  "chainIds": {
+    "origin": 84532,
+    "reactive": 5318007,
+    "destination": 84532
+  },
+  "operationId": "0xba066f118ebed561cdaf297cb72d2c7c3d402b5166a77c18b46db040e5e6df98",
+  "amount": "60",
+  "recipient": "0xDAa91d97309f4D8Dff8Cd3Eb73c680BC01626Dfe",
+  "expiresAt": 1795248456,
+  "createdAt": "2026-11-20T08:19:00.130Z",
+  "startBlocks": {
+    "84532": 61204356,
+    "5318007": 8797183
+  },
+  "initialAccounting": {
+    "cap": "100",
+    "reserved": "0",
+    "spent": "0",
+    "available": "100",
+    "blockNumber": 8797181,
+    "blockHash": "0x6e2f5d85bdce52925dbf4d8eec21cc8fde6e612f196a95776b7da6008e102c5d"
+  },
+  "initialRecipientBalance": "0",
+  "initialVaultBalance": "1000",
+  "publicTestnetExecution": true,
+  "aiInference": true,
+  "evidence": {
+    "sourceRequest": {
+      "transactionHash": "0xba31877bd975a16f0cfdf2e1997bb9b9e36343800eab312c051014cc347fb51c",
+      "blockNumber": 61204381,
+      "blockHash": "0x06d92c85cae8a3cfd2b5ccf081682677b5d083a65a009450378c8c1188e02128",
+      "chainId": 84532,
+      "status": 1,
+      "gasUsed": "76718"
+    },
+    "reactiveReservation": {
+      "transactionHash": "0x83a9dabcdb3e78aeab8caaa7e46f557f519e020d04fe0d74a3aea397a4178a4c",
+      "blockNumber": 8797188,
+      "blockHash": "0xab653d07eb1691d4b2e699691815ea2ab7ee25ac2fa8baea2479eeccccf82c6c",
+      "chainId": 5318007,
+      "status": 1,
+      "gasUsed": "253396",
+      "logIndex": 1,
+      "emitter": "0x12950907D33C85979C988a200F161CeD56150FEf",
+      "event": "CommitmentReserved"
+    },
+    "destinationGrant": {
+      "transactionHash": "0x651755048693d2ce2a52b186e57f20487df78323883c911dd449c5f67f62bc75",
+      "blockNumber": 61204385,
+      "blockHash": "0xb85203b4e5bc953329c54dce55ad190982eeefccba1e3868a238e13c07498512",
+      "chainId": 84532,
+      "status": 1,
+      "gasUsed": "162320",
+      "logIndex": 31,
+      "emitter": "0xe09f5FF8fce8Cb176AEb0d7fB0aDf493Af78A579",
+      "event": "CommitmentGranted"
+    },
+    "payment": {
+      "transactionHash": "0xa6f3eac42f9e15ad3404dfbb293448883c47545a93a9eccfd299573fed3d1e17",
+      "blockNumber": 61204436,
+      "blockHash": "0x633f5f18bce06f9e54a1d499ef38e919165ec2d29be0ed924e5912c27b233ab0",
+      "chainId": 84532,
+      "status": 1,
+      "gasUsed": "97854",
+      "paymentTransfers": [
+        "60"
+      ]
+    },
+    "reactiveSpend": {
+      "transactionHash": "0x9bddeb2728382edaeb4ef669696d6368b4075fc4bf6c317a50f68f95f09d40d1",
+      "blockNumber": 8797199,
+      "blockHash": "0xa859e4d08a705def3af7153f8d1f1a6077517adf08031d10983cb1d69a1472b1",
+      "chainId": 5318007,
+      "status": 1,
+      "gasUsed": "157161",
+      "logIndex": 1,
+      "emitter": "0x12950907D33C85979C988a200F161CeD56150FEf",
+      "event": "SpendRecorded"
+    },
+    "repeatedExecution": {
+      "transactionHash": "0xa4e80a9cbdd4c557eea196d2cdbcb373c3c77f506a4c1f473e340cb841b3ae92",
+      "blockNumber": 61204471,
+      "blockHash": "0x671be73c7dbacfd5d05d776f0bea5e5255b55ee95dbf15f212b53b626ea205cb",
+      "chainId": 84532,
+      "status": 1,
+      "gasUsed": "26265",
+      "paymentTransfers": []
+    }
+  },
+  "transactions": {
+    "request": {
+      "state": "confirmed",
+      "transactionHash": "0xba31877bd975a16f0cfdf2e1997bb9b9e36343800eab312c051014cc347fb51c",
+      "chainId": 84532,
+      "nonce": 6,
+      "to": "0xb31C9c6149116D7E56Ca32833d337890fd903c82",
+      "dataHash": "0xdd895ed349501b31f26c9f66e330309490db2318dab7d303cfd23fa00f55df8c",
+      "valueWei": "0",
+      "preparedAt": "2026-11-20T08:19:03.805Z",
+      "receipt": {
+        "transactionHash": "0xba31877bd975a16f0cfdf2e1997bb9b9e36343800eab312c051014cc347fb51c",
+        "blockNumber": 61204381,
+        "blockHash": "0x06d92c85cae8a3cfd2b5ccf081682677b5d083a65a009450378c8c1188e02128",
+        "chainId": 84532,
+        "status": 1,
+        "gasUsed": "76718"
+      }
+    },
+    "execute": {
+      "state": "confirmed",
+      "transactionHash": "0xa6f3eac42f9e15ad3404dfbb293448883c47545a93a9eccfd299573fed3d1e17",
+      "chainId": 84532,
+      "nonce": 7,
+      "to": "0xe09f5FF8fce8Cb176AEb0d7fB0aDf493Af78A579",
+      "dataHash": "0x96c376e790455581700ac1e7466dcb6ba38493561ab0eb7e0b31fc99f5da3482",
+      "valueWei": "0",
+      "preparedAt": "2026-11-20T08:19:14.670Z",
+      "receipt": {
+        "transactionHash": "0xa6f3eac42f9e15ad3404dfbb293448883c47545a93a9eccfd299573fed3d1e17",
+        "blockNumber": 61204436,
+        "blockHash": "0x633f5f18bce06f9e54a1d499ef38e919165ec2d29be0ed924e5912c27b233ab0",
+        "chainId": 84532,
+        "status": 1,
+        "gasUsed": "97854"
+      }
+    },
+    "repeat-execute": {
+      "state": "confirmed",
+      "transactionHash": "0xa4e80a9cbdd4c557eea196d2cdbcb373c3c77f506a4c1f473e340cb841b3ae92",
+      "chainId": 84532,
+      "nonce": 8,
+      "to": "0xe09f5FF8fce8Cb176AEb0d7fB0aDf493Af78A579",
+      "dataHash": "0x96c376e790455581700ac1e7466dcb6ba38493561ab0eb7e0b31fc99f5da3482",
+      "valueWei": "0",
+      "preparedAt": "2026-11-20T08:19:21.665Z",
+      "receipt": {
+        "transactionHash": "0xa4e80a9cbdd4c557eea196d2cdbcb373c3c77f506a4c1f473e340cb841b3ae92",
+        "blockNumber": 61204471,
+        "blockHash": "0x671be73c7dbacfd5d05d776f0bea5e5255b55ee95dbf15f212b53b626ea205cb",
+        "chainId": 84532,
+        "status": 1,
+        "gasUsed": "26265"
+      }
+    }
+  },
+  "publicPlan": {
+    "schemaVersion": 1,
+    "mode": "public-testnet-ai",
+    "owner": "0xDAa91d97309f4D8Dff8Cd3Eb73c680BC01626Dfe",
+    "createdAt": "2026-11-20T08:07:36.384Z",
+    "validUntil": "2026-11-21T08:07:36.384Z",
+    "chainIds": {
+      "origin": 84532,
+      "reactive": 5318007,
+      "destination": 84532
+    },
+    "input": {
+      "goal": "Extract invoice fields privately within 120 seconds.",
+      "offers": [
+        {
+          "id": "aster-extract",
+          "name": "Aster Extract",
+          "chain": "base",
+          "chainId": 84532,
+          "amount": 60,
+          "etaSeconds": 45,
+          "privacy": "private",
+          "service": "invoice-extraction",
+          "description": "Private invoice extraction with a short delivery estimate.",
+          "available": true,
+          "recipient": "0xDAa91d97309f4D8Dff8Cd3Eb73c680BC01626Dfe",
+          "demonstrationOnly": true
+        }
+      ],
+      "policy": {
+        "allowedOfferIds": [
+          "aster-extract"
+        ],
+        "allowedChainIds": [
+          84532
+        ],
+        "maxPerPurchase": 60,
+        "requiredService": "invoice-extraction",
+        "maxEtaSeconds": 120,
+        "requirePrivate": true,
+        "available": 100,
+        "reserved": 0
+      },
+      "context": {
+        "phase": "initial"
+      }
+    },
+    "result": {
+      "proposal": {
+        "action": "purchase",
+        "offerId": "aster-extract",
+        "reason": "Aster Extract meets the interpreted requirements at 60 units. The service is capable of extracting invoice fields privately within 120 seconds."
+      },
+      "authorization": {
+        "executable": true,
+        "requiresClosure": false,
+        "blockedReason": null
+      },
+      "interpretation": {
+        "service": "invoice-extraction",
+        "privacy": "private",
+        "priority": "fastest",
+        "failureType": "none",
+        "reason": "The service is capable of extracting invoice fields privately within 120 seconds."
+      },
+      "inference": {
+        "performed": true,
+        "provider": "local-llama.cpp-stdio",
+        "model": "commitbook-qwen2.5-1.5b",
+        "plannerVersion": "semantic-router-v3",
+        "durationMs": 12477,
+        "inputTokens": 240,
+        "outputTokens": 40,
+        "promptSha256": "1f0fb930fd7c4ae1780853d4f90e86e884f950d6b4ee9e86fcbf2f7b2fe5a881"
+      }
+    },
+    "source": {
+      "algorithm": "sha256",
+      "sha256": "6a140b2c5a23063e65369493628857bff0a1c7c665062278ad600e8f48c63482",
+      "paths": [
+        "agent",
+        "scripts/evaluate-agent.mjs",
+        "scripts/model-worker.py",
+        "scripts/serve-model.py",
+        "scripts/setup-model.py",
+        "scripts/lib/source-fingerprint.mjs",
+        "app/catalog.mjs",
+        "contracts",
+        "scripts/compile.mjs",
+        "scripts/deploy-testnet.mjs",
+        "scripts/live-loop.mjs",
+        "scripts/live-agent.mjs",
+        "scripts/lib/live.mjs",
+        "scripts/lib/public-plan.mjs"
+      ]
+    },
+    "scope": "Operator-reviewed semantic routing for a valueless demo-token purchase. No invoice processing service is supplied.",
+    "sha256": "26a344a29468703a530139b5e0e34edaf63022bb5a4c1005233a6cee96c73e91"
+  },
+  "approval": {
+    "digest": "26a344a29468703a530139b5e0e34edaf63022bb5a4c1005233a6cee96c73e91",
+    "method": "explicit-cli-digest",
+    "reviewedAt": "2026-11-20T08:19:00.653Z"
+  },
+  "trust": "Configured public RPCs and the official Reactive transport. Receipt inclusion is checked against canonical RPC blocks. This is not a cryptographic source-finality proof.",
+  "status": "public-testnet-loop-verified",
+  "checkedAt": "2026-11-20T08:19:26.369Z",
+  "afterGrantAccounting": {
+    "cap": "100",
+    "reserved": "60",
+    "spent": "0",
+    "available": "40",
+    "blockNumber": 8797193,
+    "blockHash": "0xafe0aa8688ba26eed5924f7697f20062ab38673462bc352e047927a4bbc5eaf9"
+  },
+  "afterPaymentRecipientBalance": "60",
+  "afterPaymentVaultBalance": "940",
+  "finalAccounting": {
+    "cap": "100",
+    "reserved": "0",
+    "spent": "60",
+    "available": "40",
+    "blockNumber": 8797206,
+    "blockHash": "0x5312584af8dc7da3a5f9cfe6269410775d90727bb5dba367aa99cfbae9c70ce0"
+  },
+  "completedAt": "2026-11-20T08:19:26.369Z"
+}

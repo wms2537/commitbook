@@ -1,5 +1,13 @@
 # CommitBook
 
+<!-- Public Reactive testnet proof, 20 November 2026 -->
+## Current public testnet result
+
+**Public AI-linked loop completed on 20 November 2026.** An operator-reviewed Qwen2.5 proposal created a 60-unit demo-token request on Base Sepolia. Reactive Lasna reserved capacity and granted the destination callback; the vault paid once and the coordinator reconciled it. A repeated execution transferred zero additional tokens. Final budget: cap 100, spent 60, reserved 0, available 40.
+
+See [the public submission writeup](docs/competition-submission.md) for all four contract addresses and six explorer receipts, and [the final video](demo/commitbook-public-submission.mp4), 171.6 seconds. Historical development material below was written before public deployment and should be read as such. Suppliers and tokens are synthetic; there is no real invoice service.
+
+
 Public source: [wms2537/commitbook](https://github.com/wms2537/commitbook).
 Submission draft: [Reactive Meets AI](docs/submission.md).
 Current gates and reproduction steps: [submission readiness](docs/submission-readiness.md).

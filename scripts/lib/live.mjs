@@ -241,7 +241,12 @@ export async function transact({ chain, manifest, manifestPath, label, request, 
   if (!entry) {
     if (await chain.provider.getBalance(chain.wallet.address) === 0n) throw new LiveError('INSUFFICIENT_TESTNET_BALANCE', { chainId: chain.chainId, balanceWei: '0' });
     const nonce = Number(BigInt(await chain.provider.send('eth_getTransactionCount', [chain.wallet.address, 'pending'])));
-    const populated = await chain.wallet.populateTransaction({ ...request, chainId: chain.chainId, nonce });
+    // COMMITBOOK_LASNA_TIP_FIX: Lasna rejects EIP-1559 tip cap zero.
+    const populated = await chain.wallet.populateTransaction({
+      ...request,
+      ...(chain.chainId === LASNA_ID ? {maxPriorityFeePerGas: 1_000_000_000n} : {}),
+      chainId: chain.chainId, nonce,
+    });
     await checkBalance(populated);
     const raw = await chain.wallet.signTransaction(populated);
     const hash = keccak256(raw);
